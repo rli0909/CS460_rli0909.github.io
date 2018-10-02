@@ -131,5 +131,6 @@ var APP = function () {
             //alert("Copied");
         }
     };
-    return dic;    
+    return dic;   
+//     
 };
