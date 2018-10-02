@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
@@ -9,76 +10,103 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
+
 <body>
 
-<div class="jumbotron text-center">
-  <h1>Homework One</h1>
-  <p>Git, HTML, CSS, Bootstrap4</p> 
-</div>
-  
-<div class="container">
-  <div class="row">
-    <div class="col-sm-4">
+  <div class="jumbotron text-center">
+    <h1>Homework One</h1>
+    <p>Git, HTML, CSS, Bootstrap4</p>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
         <a href="https://github.com/rli0909/CS460_rli12.github.io" class="list-group-item">View Code on GitHub</a>
         <a href="https://rli0909.github.io/CS460_rli12.github.io/homework1/homework1.html" class="list-group-item">Demo</a>
-    </div>
-    <div class="col-sm-8">
-      <h3>Notes</h3>
-      <div id="accordion">
+      </div>
+      <div class="col-sm-8">
+        <h3>Notes</h3>
+        <div id="accordion">
 
-        <div class="card">
-          <div class="card-header">
-            <a class="card-link" data-toggle="collapse" href="#collapseOne">
-              Git
-            </a>
-          </div>
-
-          <div id="collapseOne" class="collapse show" data-parent="#accordion">
-            <div class="card-body">
-              <div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">git remote add [remote name]origin [URL]https://github.com...</li>
-                  <li class="list-group-item">Second item</li>
-                  <li class="list-group-item">Third item</li>
-                </ul>
-
+          <div class="card">
+            <div class="card-header">
+              <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                Git
+              </a>
+            </div>
+            <div id="collapseOne" class="collapse show" data-parent="#accordion">
+              <div class="card-body">
+                <div>
+                  <a href="#" data-toggle="popover" data-placement="top" data-content="create, delete, view connections to other repositories">git
+                    remote</a>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">git remote add [remote name]origin [URL]https://github.com...</li>
+                    <li class="list-group-item">git remote -v</li>
+                    <li class="list-group-item">git remote rm <name>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="card">
-          <div class="card-header">
-            <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
-              Collapsible Group Item #2
-            </a>
+          <div class="card">
+              <div class="card-header">
+                  <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                    Bootstrap 4
+                  </a>
+                </div>
+                <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                  <div class="card-body">
+                    <div>
+                      <a href="#" data-toggle="popover" data-placement="top" data-content="MaxCDN provides CDN support for Bootstrap's CSS and JavaScript, and also need to include jQuery">MaxCDN</a>
+                      <ul class="list-group list-group-flush">
+                        <p>Latest compiled and minified CSS</p>
+                        <li class="list-group-item">link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"</li>
+                        <p>jQuery library</p>
+                        <li class="list-group-item">script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"</li>
+                        <p>Popper JS</p>
+                        <li class="list-group-item">script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+                        </li>
+                        <p>Latest compiled JavaScript</p>
+                        <li class="list-group-item">script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
           </div>
-          <div id="collapseTwo" class="collapse" data-parent="#accordion">
-            <div class="card-body">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-              ex ea commodo consequat.
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
-              Collapsible Group Item #3
-            </a>
-          </div>
-          <div id="collapseThree" class="collapse" data-parent="#accordion">
-            <div class="card-body">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-              ex ea commodo consequat.
-            </div>
+          <div class="card">
+              <div class="card-header">
+                  <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                    Git
+                  </a>
+                </div>
+                <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                  <div class="card-body">
+                    <div>
+                      <a href="#" data-toggle="popover" data-placement="top" data-content="create, delete, view connections to other repositories">git
+                        remote</a>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">git remote add [remote name]origin [URL]https://github.com...</li>
+                        <li class="list-group-item">git remote -v</li>
+                        <li class="list-group-item">git remote rm <name>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
+
+  <script>
+      $(document).ready(function(){
+          $('[data-toggle="popover"]').popover();   
+      });
+      </script>
 </body>
+
 </html>
