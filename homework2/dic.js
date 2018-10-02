@@ -85,7 +85,7 @@ var APP = function () {
                 '"': ["░░░░░", "░█░█░", "░▀░▀░", "░░░░░", "░░░░░", "░░░░░"],
                 "*": ["░░░░░░", "░░░▄░░", "░▀▄█▄▀", "░░▄▀▄░", "░▀░░░▀", "░░░░░░"],
                 "%": ["░░░░░░░░░", "░░▄░░░░▄░", "░▀▄▀░▄▀░░", "░░░▄▀░▄▀▄", "░░▀░░░░▀░", "░░░░░░░░░"]
-                
+
             };
             document.getElementById("gobtn").onclick = dic.go;
 
@@ -93,5 +93,26 @@ var APP = function () {
 
             document.getElementById("bigfontinput").onfocus = dic.textAreafocus;
 
+        },
+        go: () => {
+            data = inputdata.value;
+            var b = "";
+            var out = document.getElementById("out");
+
+            //using jQuery to split by space and join by none.
+            //text = text.split(' ').join(''));
+            for (var j = 0; j < 6; j++) {
+                var s = "";
+                for (var i = 0; i < data.length; i++) {
+                    //console.log(font[data.substr(i,1)][2]);
+                    s += font[data.substr(i, 1)][j] + "";
+                }
+                //console.log(s);
+                b += s + "░" + "\n";
+            }
+            result = b;
+            //out.innerHTML = result;
+            out.value = result;
+            resultcreated = true;
+        }
     }
-}
