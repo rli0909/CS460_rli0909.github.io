@@ -87,7 +87,11 @@ var APP = function () {
                 "%": ["░░░░░░░░░", "░░▄░░░░▄░", "░▀▄▀░▄▀░░", "░░░▄▀░▄▀▄", "░░▀░░░░▀░", "░░░░░░░░░"]
                 
             };
+            document.getElementById("gobtn").onclick = dic.go;
 
+            document.getElementById("selectbtn").onclick = dic.copy;
+
+            document.getElementById("bigfontinput").onfocus = dic.textAreafocus;
 
     }
 }
