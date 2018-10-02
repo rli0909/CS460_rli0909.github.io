@@ -19,8 +19,52 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="hw2.css">
 </head>
-<body>
+<body onload=APP.init()>
+    <div>
+        <details>
+            <summary style="font-size: 18px; font-weight: bold">Play with bigFont</summary>
+            <br>
+            <label style="font-size: 15px">So far the library
+                <b>only</b> contains
+                <font color="red">
+                    <b>A-Z</b>
+                </font>
+                &
+                <font color="red">
+                    <b>a-z</b>
+                </font>
+                &
+                <font color="red">
+                    <b>0-9</b>
+                </font>
+                & punctuation{
+                <font color="red">
+                    <b>&nbsp;.&nbsp;,&nbsp;!&nbsp;;&nbsp;:&nbsp;?&nbsp;$&nbsp;@&nbsp;~&nbsp;'&nbsp;"&nbsp;*&nbsp;%&nbsp;</b>
+                </font>} &
+                <font color="red">
+                    <b>whitespace</b>
+                </font>
+            </label>
+            <br>
+            <label style="font-size: 15px">More symbols will coming soon... Enjoy~ ^-^</label>
+            <br>
+            <label style="font-size: 15px">The copied text will only work in Notepad.</label>
+            <br>
+            <br>
+            <label style="font-size: 20px">Enter a word: </label>
+            <input id="bigfontinput" onfocus="focus()">&ensp;
+            <input id="gobtn" type="button" value="go">&ensp;
+            <input id="selectbtn" type="button" value="copy result">
+            <p></p>
+
+            <textarea id="out" rows="10" cols="230" maxlength="230" readonly="readonly" value="">Result goes here...</textarea>
+        </details>
 
 
+    </div>
+
+
+
+    <script type="text/javascript" src="dic.js"></script>
 </body>
 </html>
