@@ -114,5 +114,22 @@ var APP = function () {
             //out.innerHTML = result;
             out.value = result;
             resultcreated = true;
+        },
+
+        textAreafocus: () => {
+			if (resultcreated) {
+				inputdata.value = '';
+				resultcreated = false;
+			}
+        },
+
+        copy: () =>{
+            var text = document.getElementById("out");
+            //Event.preventDefault();
+            text.select();
+            document.execCommand("copy");
+            //alert("Copied");
         }
-    }
+    };
+    return dic;    
+};
