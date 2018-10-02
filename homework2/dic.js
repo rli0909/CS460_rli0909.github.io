@@ -5,4 +5,6 @@ var APP = function () {
     var resultcreated = true;
 
     var font = {};
+
+    var dic = {}
 }
