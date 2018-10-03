@@ -3,22 +3,23 @@
 <html lang="en">
 
 <head>
-  <title>Rli_Homework_2</title>
-  <meta charset="utf-8">
-  <!--proper rendering and touch zooming on mobile-->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-  <!--fundation icon-->
-  <link href="/open-iconic/font/css/open-iconic-foundation.css" rel="stylesheet">
-  <!-- jQuery library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <!-- Popper JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-  <!-- Latest compiled JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="hw2.css">
+    <title>Rli_Homework_2</title>
+    <meta charset="utf-8">
+    <!--proper rendering and touch zooming on mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <!--fundation icon-->
+    <link href="/open-iconic/font/css/open-iconic-foundation.css" rel="stylesheet">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="hw2.css">
 </head>
+
 <body onload="APP.init()">
     <div>
         <details>
@@ -63,8 +64,68 @@
 
     </div>
 
+    <details>
+        <summary style="font-size: 18px; font-weight: bold">Guess what? I know who are you.</summary>
+        <br>
+        <div>
+            <div class="row">
+                <div class="col-sm-4">
+                        <div class="table-responsive">          
+                                <table class="table">
+                                  <thead>
+                                    <tr>
+                                      <th>Steps</th>
+                                      <th>Instructions</th>
+                                      <th>Resources</th>
+                                      
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>Copy the resources link</td>
+                                      <td>https://reflection.wou.edu/EclipseWeb/Guest?RequestId=da25238d-40c7-e811-80df-0050568311c2&InstanceId=6f959ebb-e0a3-4d27-aece-2b1877960811</td>
+                                      
+                                    </tr>
+                                  </tbody>
+
+                                  <tbody>
+                                        <tr>
+                                          <td>2</td>
+                                          <td>On the lefe side, paste the link to the input field.</td>
+                                          <td></td>
+                                          
+                                        </tr>
+                                      </tbody>
+                                </table>
+                                </div>
+                </div>
+                <div class="col-sm-8">
+                    <label>Input Field</label>
+                    <textarea rows="3" cols="80" id="datain" type="string">Please enter/paste you DocStar link here...</textarea>
+                    <i id="checkmark" class="fa fa-check" style="visibility: hidden"></i>
+                    <i id="invalid" class="fa fa-close" style="visibility: hidden"></i>
+                    <span class="popups" id="mypop" style="visibility: hidden">__Invalid Link Format</span>
+                    <br/>
+
+                    <input id="gobutton" type="button" value="go">
+                    <br/>
+
+                    <a target="_blank" id="outLink" href="">
+                        <span id="out" style="font-size: 20">Your generated link will goes here...</span>
+                    </a>
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </details>
 
 
     <script type="text/javascript" src="dic.js"></script>
 </body>
+
 </html>
