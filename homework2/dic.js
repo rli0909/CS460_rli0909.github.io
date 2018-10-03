@@ -133,4 +133,4 @@ var APP = function () {
     };
     return dic;   
 //     
-};
+}();
