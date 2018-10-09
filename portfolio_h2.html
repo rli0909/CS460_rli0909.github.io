@@ -24,6 +24,9 @@
         <a href="https://github.com/rli0909/CS460_rli12.github.io/tree/master/homework2" class="list-group-item">View Code on GitHub</a>
         <a href="https://rli0909.github.io/CS460_rli12.github.io/homework2/homework2.html" class="list-group-item">Demo</a>
       </div>
+
+
+
       <div class="col-sm-8">
         <h3>Notes</h3>
 
@@ -41,11 +44,13 @@
                   <a href="#" data-toggle="popover" data-placement="top" data-content="a lightweight, interpreted or JIT compiled programming language with first-class functions.">ECMAScript
                   </a>
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document">Documennt</a></li>
+                    <li class="list-group-item">
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document">Documennt</a>
+                    </li>
                     <li class="list-group-item">git remote -v</li>
                     <li class="list-group-item">git remote rm</li>
-                      <name>
-                    </li>
+                    <name>
+                      </li>
                   </ul>
                 </div>
               </div>
@@ -96,15 +101,139 @@
                   </ul>
                 </div>
               </div>
-              </div>
-                
-              </div>
             </div>
+
           </div>
         </div>
       </div>
     </div>
+
+    <h3>Designs</h3>
+
+    <div id="accordion">
+
+      <div class="card">
+        <div class="card-header">
+          <a class="card-link" data-toggle="collapse" href="#collapseSix">
+            Start a new branch on github
+          </a>
+        </div>
+        <div id="collapseSix" class="collapse" data-parent="#accordion">
+          <div class="card-body">
+            <div>
+              <ul class="list-group list-group-flush">
+
+                <p>Create a new branch</p>
+                <li class="list-group-item">
+                  mkdir homework2
+                  <li class="list-group-item">
+                    cd homework2</li>
+                  <li class="list-group-item">
+                    git init</li>
+                  <li class="list-group-item">
+                    nano homework2.html</li>
+                  <li class="list-group-item">
+                    git add --a</li>
+                  <li class="list-group-item">
+                    git commit -m "initial commit for homework2"</li>
+                  <li class="list-group-item">
+                    git branch //check current branch</li>
+                  <li class="list-group-item">
+                    *** git branch hw2
+                    <p>// I followed the demonstration in class, so I created a branch hw1_edit_portfolio, and then I merged
+                      it. When I started my hw2, I created branch hw2, but didn't quit figure out how to use it, and I think
+                      I still pushed everything to origin master. I had done homework2 and figured out how to use branch.
+                      For homework3 I'll be stay on track. But for homework2 the branch is not functional working during
+                      my entire coding process.
+                    </p>
+                  </li>
+
+                  <li class="list-group-item">
+                    git checkout master //switch to master branch
+                  </li>
+
+                  <li class="list-group-item">
+                    git merge branchname(hw1_edit_portfolio) //Before doing this, make sure locate at destination branch, if merge to master,
+                    then current branch is master.
+                  </li>
+
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <a class="card-link" data-toggle="collapse" href="#collapseFour">
+            Environment Setup & Knowledge Based
+          </a>
+        </div>
+        <div id="collapseFour" class="collapse" data-parent="#accordion">
+          <div class="card-body">
+            <div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  Use Bootstrap 4 references in head section of portfolio_h2.html
+                </li>
+                <li class="list-group-item">Install Visual Studio Code for editing .js files</li>
+                <li class="list-group-item">Visit w3schools.com for ideas</li>
+                <li class="list-group-item">Learn jQuery on tutorialspoint</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <a class="card-link" data-toggle="collapse" href="#collapseFive">
+            Elements Needed
+          </a>
+        </div>
+        <div id="collapseFive" class="collapse" data-parent="#accordion">
+          <div class="card-body">
+            <div>
+              <ul class="list-group list-group-flush">
+
+                <li class="list-group-item">Decided to use details element for outer section
+                  <p>There are going to be two user interactive games. One is "Play with bigFont", and another is "Gusse what?
+                    I know who are you."</p>
+                  <p>Once user clicks the title of game, details elements will show more content with instruction display field
+                    and input field and output field</p>
+                </li>
+ 
+                  <li class="list-group-item">Play with bigFont
+                    <p>It takes user input and parsing the input to get matched characters from my built dictionary, and then
+                      concatenate the character to display in output field</p>
+                    <p>After testing, I found that the result is not look very good on Mac</p>
+                  </li>
+
+                  <li class="list-group-item">It is better to let user copy whole output instead click & hold and drag mouth to select every pieces.
+                    <p>So, I need a button element for copy</p>
+                  </li>
+
+                  <li class="list-group-item">To trigger the events, I want to use "go" button</li>
+                  <li class="list-group-item">Give clear instruction to guide user</li>
+                  <li class="list-group-item">Update instructions whenever add new character in dictionary</li>
+
+                  <li class="list-group-item">Guess what? I know who are you.
+                      <p>User log in this WOU portal, and then copy the form link, the form is made by DocStar software; and then paste the link to input field.
+                        The output is a generated link. User can click the link to see "Hello + name".
+                      </p>
+                    </li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
+
+
 
 
   <script>
