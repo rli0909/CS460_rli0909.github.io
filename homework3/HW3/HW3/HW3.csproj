@@ -45,7 +45,10 @@
     <Compile Include="Node.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <Compile Include="QueueInterface.cs" />
+=======
+>>>>>>> hw3
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
