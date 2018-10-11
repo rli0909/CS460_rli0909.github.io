@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{656ED035-ABAB-48AD-BC6D-37194C6E4FC9}</ProjectGuid>
+    <ProjectGuid>{C6F0AA4F-8564-4F66-B03C-79BB8638BA6E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>HW3</RootNamespace>
-    <AssemblyName>HW3</AssemblyName>
+    <RootNamespace>hw3</RootNamespace>
+    <AssemblyName>hw3</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,17 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Node.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <Compile Include="QueueInterface.cs" />
-=======
->>>>>>> hw3
-=======
-    <Compile Include="QueueInterface.cs" />
->>>>>>> hw3
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

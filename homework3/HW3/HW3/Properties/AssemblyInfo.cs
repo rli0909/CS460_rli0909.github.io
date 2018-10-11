@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("HW3")]
+[assembly: AssemblyTitle("hw3")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("WOU")]
-[assembly: AssemblyProduct("HW3")]
+[assembly: AssemblyProduct("hw3")]
 [assembly: AssemblyCopyright("Copyright © WOU 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("656ed035-abab-48ad-bc6d-37194c6e4fc9")]
+[assembly: Guid("c6f0aa4f-8564-4f66-b03c-79bb8638ba6e")]
 
 // Version information for an assembly consists of the following four values:
 //
