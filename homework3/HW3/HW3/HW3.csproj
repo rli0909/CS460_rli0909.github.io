@@ -46,8 +46,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Compile Include="QueueInterface.cs" />
 =======
+>>>>>>> hw3
+=======
+    <Compile Include="QueueInterface.cs" />
 >>>>>>> hw3
   </ItemGroup>
   <ItemGroup>
