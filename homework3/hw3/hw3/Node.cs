@@ -4,8 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HW3
+namespace hw3
 {
+
+    /** Singly linked node class. */
+
     class Node<T>
     {
         public T data;
@@ -17,4 +20,5 @@ namespace HW3
             this.next = next;
         }
     }
+
 }
