@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace hw3
+namespace Hw3
 {
-    class Main
+    class MyLQueue
     {
         static LinkedList<String> GenerateBinaryRepresentationList(int n)
         {
             LinkedQueue<StringBuilder> q = new LinkedQueue<StringBuilder>();
 
-            LinkedList<String> output = new LinkedList<String>();
+            LinkedList<String> output = new System.Collections.Generic.LinkedList<String>();
 
             if (n < 1)
             {
