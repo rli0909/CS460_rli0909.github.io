@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hw3
+namespace HW3
 {
 
     /** Singly linked node class. */

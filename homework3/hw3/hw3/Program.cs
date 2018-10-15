@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace hw3
+namespace HW3
 {
     class Program
     {
             static LinkedList<String> GenerateBinaryRepresentationList(int n)
             {
-            Hw3.LinkedQueue<StringBuilder> q = new Hw3.LinkedQueue<StringBuilder>();
+            LinkedQueue<StringBuilder> q = new LinkedQueue<StringBuilder>();
 
                 LinkedList<String> output = new System.Collections.Generic.LinkedList<String>();
 

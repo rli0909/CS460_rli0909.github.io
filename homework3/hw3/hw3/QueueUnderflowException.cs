@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hw3
+namespace HW3
 {
-    class QueueUnderflowException : ApplicationException
+    class QueueUnderflowException : SystemException
     {
         private static string msg = "Queue is empty!";
         public QueueUnderflowException(string s) : base(msg) { }

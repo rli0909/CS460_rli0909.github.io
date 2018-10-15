@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hw3
+namespace HW3
 {
     class LinkedQueue<T> : IQueue<T>
     {
@@ -59,7 +59,7 @@ namespace Hw3
             {
                 throw new NullReferenceException();
             }
-            else if (IsEmpty())
+            else if ( IsEmpty() )
             {
                 Node<T> tmp = new Node<T>(element, null);
                 Rear = Front = tmp;

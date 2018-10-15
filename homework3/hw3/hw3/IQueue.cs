@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hw3
+namespace HW3
 {
     /**
     * A FIFO queue interface.  This ADT is suitable for a singly
