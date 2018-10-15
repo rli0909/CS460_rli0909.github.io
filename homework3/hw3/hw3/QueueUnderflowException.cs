@@ -10,5 +10,7 @@ namespace HW3
     {
         private static string msg = "Queue is empty!";
         public QueueUnderflowException(string s) : base(msg) { }
+        public QueueUnderflowException() : base() { }
     }
+
 }
