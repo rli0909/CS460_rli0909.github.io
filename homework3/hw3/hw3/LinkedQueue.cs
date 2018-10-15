@@ -59,8 +59,12 @@ namespace Hw3
             {
                 throw new NullReferenceException();
             }
-
-            if (IsEmpty())
+            else if (IsEmpty())
+            {
+                Node<T> tmp = new Node<T>(element, null);
+                Rear = Front = tmp;
+            }
+            else
             {
                 Node<T> tmp = new Node<T>(element, null);
                 Rear.next = tmp;
