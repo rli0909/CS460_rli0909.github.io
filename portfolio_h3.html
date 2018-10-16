@@ -2,69 +2,118 @@
 <html lang="en">
 
 <head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
 
 <body>
 
-  <div class="jumbotron text-center">
-    <h1>Homework Three</h1>
-    <p>C#</p>
-  </div>
+    <div class="jumbotron text-center">
+        <h1>Homework Three</h1>
+        <p>C#</p>
+    </div>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-4">
-        <a href="https://github.com/rli0909/CS460_rli12.github.io/tree/master/homework2" class="list-group-item">View Code on GitHub</a>
-      </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <a href="https://github.com/rli0909/CS460_rli12.github.io/tree/master/homework2" class="list-group-item">View
+                    Code on GitHub</a>
+            </div>
 
-      <div class="col-sm-8">
-        <h3>Notes</h3>
+            <div class="col-sm-8">
+                <h3>Notes</h3>
+
+                <div id="accordion">
+
+                    <div class="card">
+                        <div class="card-header">
+                            <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                                C#
+                            </a>
+                        </div>
+                        <div id="collapseOne" class="collapse" data-parent="#accordion">
+                            <div class="card-body">
+                                <div>
+                                    <a href="#" data-toggle="popover" data-placement="top" data-content="C# is a simple, modern, general-purpose, object-oriented programming language developed by Microsoft within its .NET initiative led by Anders Hejlsberg.">C#
+                                    </a>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">
+                                            <a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/">Documennt/Programming
+                                                Guide</a>
+                                        </li>
+                                        <li class="list-group-item">When using visual studio to create C# console file,
+                                            there is a default file contains Main which is called program.cs</li>
+                                        <li class="list-group-item">
+                                            <a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/default-values-table">Default
+                                                values table (C# Reference)</a>
+                                        </li>
+                                        <li class="list-group-item">int a = default(int); // a = null</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3>Blog</h3>
 
         <div id="accordion">
-
             <div class="card">
                 <div class="card-header">
-                  <a class="card-link" data-toggle="collapse" href="#collapseOne">
-                    C#
-                  </a>
+                    <a class="card-link" data-toggle="collapse" href="#collapseSix">
+                        From Java to C#
+                    </a>
                 </div>
-                <div id="collapseOne" class="collapse" data-parent="#accordion">
-                  <div class="card-body">
-                    <div>
-                      <a href="#" data-toggle="popover" data-placement="top" data-content="C# is a simple, modern, general-purpose, object-oriented programming language developed by Microsoft within its .NET initiative led by Anders Hejlsberg.">C#
-                      </a>
-                      <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                          <a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/">Documennt/Programming Guide</a>
-                        </li>
-                        <li class="list-group-item">When using visual studio to create C# console file, there is a default file contains Main which is called program.cs</li>
-                        <li class="list-group-item">
-                            <a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/default-values-table">Default values table (C# Reference)</a>
+            </div>
+
+            <div id="collapseSix" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                      <div>
+                        <ul class="list-group list-group-flush">
+          
+                          <p>Create new project</p>
+                          <li class="list-group-item">
+                            Location is reporsitory folder.
+                            <img src="homework3/hw3/hw3/01.JPG"/>
                           </li>
-                        <li class="list-group-item">int a = default(int);</li>
-                      </ul>
+
+                          <li class="list-group-item">
+                                Create Node class
+                            <img src="homework3/hw3/hw3/02.JPG"/>
+                          </li>
+
+                          <li class="list-group-item">
+                                Create Interface
+                            <img src="homework3/hw3/hw3/03.JPG"/>
+                          </li>
+
+                            
+          
+                        
+          
+                
+                        </ul>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
 
 
+        </div>
+    </div>
+    </div>
 
-
-
-  
-  <script>
-    $(document).ready(function () {
-      $('[data-toggle="popover"]').popover();
-    });
-  </script>
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="popover"]').popover();
+        });
+    </script>
 </body>
 
 </html>
