@@ -67,43 +67,73 @@
         <div id="accordion">
             <div class="card">
                 <div class="card-header">
-                    <a class="card-link" data-toggle="collapse" href="#collapseSix">
-                        From Java to C#
+                    <a class="card-link" data-toggle="collapse" href="#collapseTwo">
+                        From Java to C# (Using Visual Studio)
                     </a>
                 </div>
             </div>
 
-            <div id="collapseSix" class="collapse" data-parent="#accordion">
-                    <div class="card-body">
-                      <div>
+            <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                <div class="card-body">
+                    <div>
                         <ul class="list-group list-group-flush">
-          
-                          <p>Create new project</p>
-                          <li class="list-group-item">
-                            Location is reporsitory folder.
-                            <img src="homework3/hw3/hw3/01.JPG"/>
-                          </li>
 
-                          <li class="list-group-item">
-                                Create Node class
-                            <img src="homework3/hw3/hw3/02.JPG"/>
-                          </li>
+                            <p>Create new project</p>
+                            <li class="list-group-item">
+                                Location is reporsitory folder.<br>
+                                <img src="homework3/hw3/hw3/01.JPG" />
+                            </li>
 
-                          <li class="list-group-item">
-                                Create Interface
-                            <img src="homework3/hw3/hw3/03.JPG"/>
-                          </li>
+                            <li class="list-group-item">
+                                Create Node class<br>
+                                <img src="homework3/hw3/hw3/02.JPG" />
+                            </li>
 
-                            
-          
-                        
-          
-                
+                            <li class="list-group-item">
+                                Create Interface<br>
+                                <img src="homework3/hw3/hw3/03.JPG" />
+                            </li>
+
+                            <li class="list-group-item">
+                                Create my own exceptions (resource from book)<br>
+                                <img src="homework3/hw3/hw3/04.JPG" />
+
+                            </li>
+
+                            <li class="list-group-item">
+                                My code for QueueUnderflowException<br>
+                                <img src="homework3/hw3/hw3/05.JPG" />
+                            </li>
+
                         </ul>
-                      </div>
                     </div>
-                  </div>
+                </div>
+            </div>
 
+
+            <div class="card">
+                <div class="card-header">
+                    <a class="card-link" data-toggle="collapse" href="#collapseThree">
+                        Error Message
+                    </a>
+                </div>
+            </div>
+
+            <div id="collapseThree" class="collapse" data-parent="#accordion">
+                <div class="card-body">
+                    <div>
+                        <ul class="list-group list-group-flush">
+
+                            <p>error CS0017: Program has more than one entry point defined. Compile with /main to specify the type that contains the entry point.</p>
+                            <li class="list-group-item">
+                             [Solved]: When using visual studio to create a new C# console project, it auto-creates a program.cs file which is a Main for app.<br>
+                                       By delete my Main.cs and write the main() to program.cs file, problem solved.
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>
@@ -113,6 +143,9 @@
         $(document).ready(function () {
             $('[data-toggle="popover"]').popover();
         });
+
+        // size all <img/> tag as width 600
+        $("img").width(600);
     </script>
 </body>
 
