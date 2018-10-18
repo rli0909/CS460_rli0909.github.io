@@ -3,5 +3,48 @@
     ViewBag.Title = "Converter";
 }
 
-<h2>Converter</h2>
+<h2>Convert Miles to Metric</h2>
 
+<div class="row">
+    <div class="col-sm-6">
+        <form>
+            Miles<br>
+            <input name="miles" type="number" />
+        </form>
+    </div>
+    <div class="col-sm-6">
+        <form>
+            <fieldset>
+                <legend>Select a unit</legend>
+
+                <div>
+                    <input type="radio" id="mill" name="unit" checked/>
+                    <label for="mill">millimeters</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="cent" name="unit" />
+                    <label for="cent">centimeters</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="meters" name="unit" />
+                    <label for="meters">meters</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="kilo" name="unit" />
+                    <label for="kilo">kilometers</label>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 text-center">
+        <button type="button" class="btn btn-primary convertBtn">Convert</button>
+    </div>
+</div>
+    

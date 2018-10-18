@@ -22,3 +22,9 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/* Center convert button*/
+.convertBtn {
+    margin: auto;
+    align-content: center;
+}
