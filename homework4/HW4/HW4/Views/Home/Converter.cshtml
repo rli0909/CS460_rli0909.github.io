@@ -1,21 +1,24 @@
 ﻿
 
 <h2>Convert Miles to Metric</h2>
+<form action="Home/Converter" method="get">
+    <div class="row">
 
-<div class="row">
-    <div class="col-sm-6">
-        <form>
+        <div class="col-sm-6">
+
             Miles<br>
             <input name="miles" type="number" />
-        </form>
-    </div>
-    <div class="col-sm-6">
-        <form>
+        </div>
+
+
+
+        <div class="col-sm-6">
+
             <fieldset>
                 <legend>Select a unit</legend>
 
                 <div>
-                    <input type="radio" id="mill" name="unit" checked/>
+                    <input type="radio" id="mill" name="unit" checked />
                     <label for="mill">millimeters</label>
                 </div>
 
@@ -33,15 +36,24 @@
                     <input type="radio" id="kilo" name="unit" />
                     <label for="kilo">kilometers</label>
                 </div>
-
             </fieldset>
-        </form>
-    </div>
-</div>
 
-<div class="row">
-    <div class="col-12 text-center">
-        <button type="button" class="btn btn-primary convertBtn">Convert</button>
+        </div>
+
+        <div class="row">
+            <div class="col-12 text-center">
+                <button type="button" class="btn btn-primary convertBtn">Convert</button>
+            </div>
+        </div>
+
+
     </div>
-</div>
-    
+</form>
+
+@if (ViewBag.message != null)
+{
+    <h3>@ViewBag.message</h3>
+}
+
+
+

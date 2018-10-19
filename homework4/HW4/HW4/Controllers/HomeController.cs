@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -27,9 +28,13 @@ namespace HW4.Controllers
             return View();
         }
 
+        [HttpGet]
         public ActionResult Converter()
         {
-            
+            string mile = Request.Form["miles"];
+            string unit = Request.Form["unit"];
+
+            ViewBag.Message = mile + "&&&&&" + unit;
             return View();
         }
 
