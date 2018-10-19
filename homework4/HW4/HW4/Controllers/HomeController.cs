@@ -31,8 +31,12 @@ namespace HW4.Controllers
         [HttpGet]
         public ActionResult Converter()
         {
-            string mile = Request.Form["miles"];
-            string unit = Request.Form["unit"];
+            string mile = Request.QueryString["miles"];
+            string unit = Request.QueryString["unit"];
+
+            
+            //int? miles = int.Parse(mile);
+            //int? units = int.Parse(unit);
 
             ViewBag.Message = mile + "&&&&&" + unit;
             return View();
