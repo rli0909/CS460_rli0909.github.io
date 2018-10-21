@@ -78,6 +78,8 @@ namespace HW4.Controllers
             string htmlColor1 = ColorTranslator.ToHtml(color1);
             string htmlColor2 = ColorTranslator.ToHtml(color2);
 
+            ViewBag.mix = htmlColor1 + htmlColor2;
+
             return View();
         }
     }
