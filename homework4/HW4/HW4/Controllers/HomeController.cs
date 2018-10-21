@@ -72,15 +72,18 @@ namespace HW4.Controllers
         }
 
         [HttpPost]
-        public ActionResult ColorChooser(Color color1, Color color2)
+        public ActionResult ColorChooser(int? id, int? size, string kind)
         {
+            
 
-            string htmlColor1 = ColorTranslator.ToHtml(color1);
-            string htmlColor2 = ColorTranslator.ToHtml(color2);
 
+<<<<<<< HEAD
             ViewBag.mix = htmlColor1 + htmlColor2;
 
             return View();
+=======
+            
+>>>>>>> 7d9d49500b944c434e420e6dd99ef553a61aaa63
         }
     }
 }

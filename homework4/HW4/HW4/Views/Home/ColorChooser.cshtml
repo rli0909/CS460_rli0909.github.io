@@ -1,25 +1,25 @@
 ﻿
 
-@{
-    ViewBag.Title = "ColorChooser";
-}
-
-
 @using (Html.BeginForm("ColorChooser", "Home", FormMethod.Post))
 {
     <h2>Create a New Color</h2>
     <h4>Please enter colors in HTML hexadecimal format: #AABBCC</h4>
     @Html.Label("Color 1")<br />
-    <input type="color" /><br />
+    @Html.TextBox("color1", "#090909", htmlAttributes: new { @class = "form-control"})<br />
     @Html.Label("Color 2")<br />
-    <input type="color" /><br />
-    @Html.Label(" ")
+    @Html.TextBox("color2", "#111111", htmlAttributes: new { @class = "form-control"})<br />
     @Html.Label(" ")<br />
     <input type="submit" class="btn btn-primary convertBtn" value="Submit" />
 
 
 }
 
+<<<<<<< HEAD
 <h3>@ViewBag.mix</h3>
 
 
+=======
+@{ 
+    ViewBag.Title = "ColorChooser";
+}
+>>>>>>> 7d9d49500b944c434e420e6dd99ef553a61aaa63

@@ -7,7 +7,7 @@
         <div class="col-sm-6">
 
             Miles<br>
-            <input name="miles" type="number" step="0.01"/>
+            <input name="miles" type="number" step="0.01" />
         </div>
 
 
@@ -23,17 +23,17 @@
                 </div>
 
                 <div>
-                    <input type="radio" id="centimeters" name="unit" value="160934.4"/>
+                    <input type="radio" id="centimeters" name="unit" value="160934.4" />
                     <label for="cent">centimeters</label>
                 </div>
 
                 <div>
-                    <input type="radio" id="meters" name="unit" value="1609.344"/>
+                    <input type="radio" id="meters" name="unit" value="1609.344" />
                     <label for="meters">meters</label>
                 </div>
 
                 <div>
-                    <input type="radio" id="kilometers" name="unit" value="1.609344"/>
+                    <input type="radio" id="kilometers" name="unit" value="1.609344" />
                     <label for="kilo">kilometers</label>
                 </div>
             </fieldset>
@@ -49,6 +49,10 @@
 
     </div>
 </form>
+
+@{
+    ViewBag.Title = "Converter";
+}
 
 @if (ViewBag.message != null)
 {
