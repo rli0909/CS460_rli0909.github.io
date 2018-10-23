@@ -1,7 +1,36 @@
 ﻿
+
 @{
+    /**/
+
     ViewBag.Title = "ColorChooser";
 }
 
-<h2>ColorChooser</h2>
 
+
+@using (Html.BeginForm("ColorChooser", "Home", FormMethod.Post))
+{
+    <h2>Create a New Color</h2>
+    <h4>Please enter colors in HTML hexadecimal format: #AABBCC</h4>
+    @Html.Label("Color 1")<br />
+    @Html.TextBox("color1", null, htmlAttributes: new { @class = "form-control", type = "text" })<br />
+    @Html.Label("Color 2")<br />
+    @Html.TextBox("color2", null, htmlAttributes: new { @class = "form-control", type = "text" })<br />
+    @Html.Label(" ")<br />
+
+    <i class="fas fa-paint-brush" style="color:@ViewBag.color1;font-size:60px"></i>
+
+    <font size="28"> + </font>
+    <i class="fas fa-palette" style="color:@ViewBag.color2;font-size:60px"></i>
+    <font size="28"> = </font>
+    <i class="fab fa-mix" style="color:@ViewBag.mix;font-size:60px"></i>
+
+    @Html.Label(" ")<br />
+    <input type="submit" class="btn btn-primary convertBtn" value="Submit" />
+}
+
+Color 1: @ViewBag.Color1<br>
+Color 2: @ViewBag.Color2<br>
+Blend Color: @ViewBag.mix<br>
+<!--32-bit ARGE value: @*@ViewBag.mixValue*@<br>-->
+@ViewBag.colorBlock

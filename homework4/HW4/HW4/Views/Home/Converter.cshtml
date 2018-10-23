@@ -7,7 +7,7 @@
         <div class="col-sm-6">
 
             Miles<br>
-            <input name="miles" type="number" />
+            <input name="miles" type="number" step="0.01" />
         </div>
 
 
@@ -18,22 +18,22 @@
                 <legend>Select a unit</legend>
 
                 <div>
-                    <input type="radio" id="mill" name="unit" value="1609344" checked />
+                    <input type="radio" id="millimeters" name="unit" value="1609344" checked />
                     <label for="mill">millimeters</label>
                 </div>
 
                 <div>
-                    <input type="radio" id="cent" name="unit" value="160934.4"/>
+                    <input type="radio" id="centimeters" name="unit" value="160934.4" />
                     <label for="cent">centimeters</label>
                 </div>
 
                 <div>
-                    <input type="radio" id="meters" name="unit" value="1609.344"/>
+                    <input type="radio" id="meters" name="unit" value="1609.344" />
                     <label for="meters">meters</label>
                 </div>
 
                 <div>
-                    <input type="radio" id="kilo" name="unit" value="1.609344"/>
+                    <input type="radio" id="kilometers" name="unit" value="1.609344" />
                     <label for="kilo">kilometers</label>
                 </div>
             </fieldset>
@@ -42,13 +42,17 @@
 
         <div class="row">
             <div class="col-12 text-center">
-                <button type="button" class="btn btn-primary convertBtn">Convert</button>
+                <input type="submit" class="btn btn-primary convertBtn" value="Convert"></input>
             </div>
         </div>
 
 
     </div>
 </form>
+
+@{
+    ViewBag.Title = "Converter";
+}
 
 @if (ViewBag.message != null)
 {
