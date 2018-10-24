@@ -40,15 +40,18 @@
                             <div class="card-body">
                                 <div>
                                     <a href="#" data-toggle="popover" data-placement="top" data-content="The Web MVC project templates integrate seamlessly with the One ASP.NET experience. 
-                                    You can customize your MVC project and configure authentication using the One ASP.NET project creation wizard.">ASP.NET MVC 5
+                                    You can customize your MVC project and configure authentication using the One ASP.NET project creation wizard.">ASP.NET
+                                        MVC 5
                                     </a>
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item">
                                             <a href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.colortranslator?view=netframework-4.7.2">system.drawing.colortranslator</a><br>
                                             <a href="https://docs.microsoft.com/en-us/dotnet/api/system.drawing.color?view=netframework-4.7.2">system.drawing.color</a><br>
-                                            <a href="https://msdn.microsoft.com/en-us/library/ms524784(v=vs.90).aspx">Request.QueryString Collection</a><br>
-                                            <a href="https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.debug.writeline?view=netframework-4.7.2">Debug.WriteLine Method</a>
-                                            
+                                            <a href="https://msdn.microsoft.com/en-us/library/ms524784(v=vs.90).aspx">Request.QueryString
+                                                Collection</a><br>
+                                            <a href="https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.debug.writeline?view=netframework-4.7.2">Debug.WriteLine
+                                                Method</a>
+
                                         </li>
                                         <li class="list-group-item">Request.QueryString Collection
                                         </li>
@@ -78,39 +81,117 @@
             </div>
 
             <div id="collapseSix" class="collapse" data-parent="#accordion">
-                    <div class="card-body">
-                      <div>
+                <div class="card-body">
+                    <div>
                         <ul class="list-group list-group-flush">
-          
-                          <p>Designing</p>
-                          <li class="list-group-item">
-                            Sketch
-                            <img src="homework4/06.JPG"/>
-                          </li>
 
-                          <p>Using Request.QueryString["name"]</p>
-                          <li class="list-group-item">
-                            string mile = Request.QueryString["miles"];<br>
-                            string unit = Request.QueryString["unit"];<br>
-                
-                            float miles = 0.0f;<br>
-                            float units = 0.0f;<br>
-                          </li>
+                            <p style="font-size: 20px; font-weight: bold">Designing</p>
+                            <li class="list-group-item">
+                                Sketch
+                                <img src="homework4/06.JPG" />
+                            </li>
 
-                          <li class="list-group-item">
-                                Create Interface
-                            <img src="homework3/hw3/hw3/03.JPG"/>
-                          </li>
+                            <p style="font-size: 20px; font-weight: bold">Using Request.QueryString["name"]</p>
+                            <li class="list-group-item">
+                                string mile = Request.QueryString["miles"];<br>
+                                string unit = Request.QueryString["unit"];<br>
 
-                            
-          
-                        
-          
-                
+                                float miles = 0.0f;<br>
+                                float units = 0.0f;<br>
+                            </li>
+
+                            <p style="font-size: 20px; font-weight: bold">Validate Value of Request.QueryString. If the
+                                value is not null, convert value from string type to float type</p>
+                            <li class="list-group-item">
+                                if (mile != null && unit != null)<br>
+                                {<br>
+                                miles = float.Parse(mile);<br>
+                                units = float.Parse(unit);<br>
+                                }<br>
+                            </li>
+
+                            <p style="font-size: 20px; font-weight: bold">Conditions</p>
+                            <li class="list-group-item">
+                                if (unit == "1609344")<br>
+                                {<br>
+                                ViewBag.Message = miles + " miles " + " is equals to " + result + " millimeters";<br>
+                                }<br>
+                                else if (unit == "160934.4")<br>
+                                {<br>
+                                ViewBag.Message = miles + " miles " + " is equals to " + result + " centimeters";<br>
+                                }<br>
+                                else if (unit == "1609.344")<br>
+                                {<br>
+                                ViewBag.Message = miles + " miles " + " is equals to " + result + " meters";<br>
+                                }<br>
+                                else if (unit == "1.609344")<br>
+                                {<br>
+                                ViewBag.Message = miles + " miles " + " is equals to " + result + " kilometers";<br>
+                                }<br>
+                            </li>
+
                         </ul>
-                      </div>
                     </div>
-                  </div>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="card-header">
+                    <a class="card-link" data-toggle="collapse" href="#collapseFive">
+                        Color Chooser
+                    </a>
+                </div>
+            </div>
+
+            <div id="collapseFive" class="collapse" data-parent="#accordion">
+                <div class="card-body">
+                    <div>
+                        <ul class="list-group list-group-flush">
+
+                            <p style="font-size: 20px; font-weight: bold">Designing</p>
+                            <li class="list-group-item">
+                                Sketch
+                                <img src="homework4/07.JPG" />
+                            </li>
+
+                            <p style="font-size: 20px; font-weight: bold">Get color from view and apply algorithm (Code
+                                is example of A in ARGB value.)</p>
+                            <li class="list-group-item">
+                                int a1 = ViewBag.color1 = ColorTranslator.FromHtml(color1).A;<br>
+                                int a2 = ViewBag.color2 = ColorTranslator.FromHtml(color2).A;<br>
+                                int mixA = a1 + a2;<br>
+                                if (mixA >= 255)<br>
+                                {<br>
+                                mixA = 255;<br>
+                                }<br>
+                            </li>
+
+                            <p style="font-size: 20px; font-weight: bold">Convert result color into ARGB structure, and
+                                then convert ARGB value to Hex value</p>
+                            <li class="list-group-item">
+                                Color result = Color.FromArgb(mixA, mixRed, mixGreen, mixBlue);<br>
+                                string hexValue = ColorTranslator.ToHtml(result);<br>
+                                ViewBag.mix = hexValue;<br>
+                            </li>
+
+                            <p style="font-size: 20px; font-weight: bold">Display original color 1 + color 2 = new
+                                mixed color</p>
+                            <li class="list-group-item">
+                                ViewBag.color1 = color1; <br>
+                                ViewBag.color2 = color2; <br>
+
+                                &lt;i class="fas fa-paint-brush" style="color:@ViewBag.color1;font-size:60px">&lt;/i><br>
+
+                                &lt;font size="28"> + &lt;/font><br>
+                                &lt;i class="fas fa-palette" style="color:@ViewBag.color2;font-size:60px">&lt;/i><br>
+                                &lt;font size="28"> = &lt;/font><br>
+                                &lt;i class="fab fa-mix" style="color:@ViewBag.mix;font-size:60px">&lt;/i><br>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
 
         </div>
