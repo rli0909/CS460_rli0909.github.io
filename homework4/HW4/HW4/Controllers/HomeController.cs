@@ -7,6 +7,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+using System.Text.RegularExpressions; // validate input value
+
 namespace HW4.Controllers
 {
     public class HomeController : Controller
@@ -72,48 +74,69 @@ namespace HW4.Controllers
             return View();
         }
 
+        // Global variable for ARGB
+        int mixA;
+        int mixRed;
+        int mixGreen;
+        int mixBlue;
+
         [HttpPost]
         public ActionResult ColorChooser(string color1, string color2)
         {
 
+            // Define a regular expression
+            Regex rx = new Regex("^#(?:[0-9a-fA-F]{3}){1,2}$");
 
-            int a1 = ViewBag.color1 = ColorTranslator.FromHtml(color1).A;
-            int a2 = ViewBag.color2 = ColorTranslator.FromHtml(color2).A;
-            int mixA = a1 + a2;
-            if (mixA >= 255)
+            Debug.WriteLine(color1 + "@@@@@@@@" + color2);
+
+            bool matches1 = rx.IsMatch(color1);
+            bool matches2 = rx.IsMatch(color2);
+
+            Debug.WriteLine(color1 + "@@@@@@@@" + color2);
+
+            // If the input format is Hex color value, then process input
+            if (rx.IsMatch(color1) && rx.IsMatch(color2))
             {
-                mixA = 255;
+
+                int a1 = ViewBag.color1 = ColorTranslator.FromHtml(color1).A;
+                int a2 = ViewBag.color2 = ColorTranslator.FromHtml(color2).A;
+                mixA = a1 + a2;
+                if (mixA >= 255)
+                {
+                    mixA = 255;
+                }
+
+                int red1 = ViewBag.color1 = ColorTranslator.FromHtml(color1).R;
+                int red2 = ViewBag.color1 = ColorTranslator.FromHtml(color2).R;
+
+                mixRed = red1 + red2;
+                if (mixRed >= 255)
+                {
+                    mixRed = 255;
+                }
+
+                int green1 = ViewBag.color1 = ColorTranslator.FromHtml(color1).G;
+                int green2 = ViewBag.color1 = ColorTranslator.FromHtml(color2).G;
+                mixGreen = green1 + green2;
+                if (mixGreen >= 255)
+                {
+                    mixGreen = 255;
+                }
+
+                int blue1 = ViewBag.color1 = ColorTranslator.FromHtml(color1).B;
+                int blue2 = ViewBag.color1 = ColorTranslator.FromHtml(color2).B;
+                mixBlue = blue1 + blue2;
+                if (mixBlue >= 255)
+                {
+                    mixBlue = 255;
+                }
             }
-
-
-            int red1 = ViewBag.color1 = ColorTranslator.FromHtml(color1).R;
-            int red2 = ViewBag.color1 = ColorTranslator.FromHtml(color2).R;
-
-            int mixRed = red1 + red2;
-            if (mixRed >= 255)
+            else
             {
-                mixRed = 255;
+                throw new FormatException();
             }
-
-            int green1 = ViewBag.color1 = ColorTranslator.FromHtml(color1).G;
-            int green2 = ViewBag.color1 = ColorTranslator.FromHtml(color2).G;
-
-            int mixGreen = green1 + green2;
-            if (mixGreen >= 255)
-            {
-                mixGreen = 255;
-            }
-
-
-            int blue1 = ViewBag.color1 = ColorTranslator.FromHtml(color1).B;
-            int blue2 = ViewBag.color1 = ColorTranslator.FromHtml(color2).B;
-
-            int mixBlue = blue1 + blue2;
-            if (mixBlue >= 255)
-            {
-                mixBlue = 255;
-            }
-
+                
+       
 
             //Get result color in ARGB structure
             Color result = Color.FromArgb(mixA, mixRed, mixGreen, mixBlue);

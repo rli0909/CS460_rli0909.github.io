@@ -41,7 +41,7 @@
                                 <div>
                                     <a href="#" data-toggle="popover" data-placement="top" data-content="The Web MVC project templates integrate seamlessly with the One ASP.NET experience. 
                                     You can customize your MVC project and configure authentication using the One ASP.NET project creation wizard.">ASP.NET
-                                        MVC 5
+                                        MVC 5 (.NET Framework 4.7.2)
                                     </a>
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item">
@@ -53,14 +53,23 @@
                                                 Method</a>
 
                                         </li>
-                                        <li class="list-group-item">Request.QueryString Collection
-                                        </li>
+
                                         <li class="list-group-item">
                                             <a href="https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/default-values-table">Default
                                                 values table (C# Reference)</a>
                                         </li>
-                                        <li class="list-group-item">int a = default(int); // a = null</li>
                                     </ul>
+
+
+                                    <a href="#" data-toggle="popover" data-placement="top" data-content="The Web MVC project templates integrate seamlessly with the One ASP.NET experience. 
+                                    You can customize your MVC project and configure authentication using the One ASP.NET project creation wizard.">
+                                    </a>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">
+                                            <a href="https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.7.2">Regex Class (Namespace: System.Text.RegularExpressions)</a>
+                                        </li>
+                                    </ul>
+
                                 </div>
                             </div>
                         </div>
@@ -105,8 +114,8 @@
                             <li class="list-group-item">
                                 if (mile != null && unit != null)<br>
                                 {<br>
-                                miles = float.Parse(mile);<br>
-                                units = float.Parse(unit);<br>
+                                    &emsp;miles = float.Parse(mile);<br>
+                                    &emsp;units = float.Parse(unit);<br>
                                 }<br>
                             </li>
 
@@ -114,19 +123,19 @@
                             <li class="list-group-item">
                                 if (unit == "1609344")<br>
                                 {<br>
-                                ViewBag.Message = miles + " miles " + " is equals to " + result + " millimeters";<br>
+                                    &emsp;ViewBag.Message = miles + " miles " + " is equals to " + result + " millimeters";<br>
                                 }<br>
                                 else if (unit == "160934.4")<br>
                                 {<br>
-                                ViewBag.Message = miles + " miles " + " is equals to " + result + " centimeters";<br>
+                                    &emsp;ViewBag.Message = miles + " miles " + " is equals to " + result + " centimeters";<br>
                                 }<br>
                                 else if (unit == "1609.344")<br>
                                 {<br>
-                                ViewBag.Message = miles + " miles " + " is equals to " + result + " meters";<br>
+                                    &emsp;ViewBag.Message = miles + " miles " + " is equals to " + result + " meters";<br>
                                 }<br>
                                 else if (unit == "1.609344")<br>
                                 {<br>
-                                ViewBag.Message = miles + " miles " + " is equals to " + result + " kilometers";<br>
+                                    &emsp;ViewBag.Message = miles + " miles " + " is equals to " + result + " kilometers";<br>
                                 }<br>
                             </li>
 
@@ -163,7 +172,7 @@
                                 int mixA = a1 + a2;<br>
                                 if (mixA >= 255)<br>
                                 {<br>
-                                mixA = 255;<br>
+                                    &emsp;mixA = 255;<br>
                                 }<br>
                             </li>
 
@@ -187,6 +196,22 @@
                                 &lt;i class="fas fa-palette" style="color:@ViewBag.color2;font-size:60px">&lt;/i><br>
                                 &lt;font size="28"> = &lt;/font><br>
                                 &lt;i class="fab fa-mix" style="color:@ViewBag.mix;font-size:60px">&lt;/i><br>
+                            </li>
+
+                            <p style="font-size: 20px; font-weight: bold">Using regex to validate input color value</p>
+                            <li class="list-group-item">
+                                <font color="DeepSkyBlue">using</font> System.Text.RegularExpressions;<br>
+                                <font color="green">// Define a regular expression</font><br>
+                                Regex rx = new Regex("^#(?:[0-9a-fA-F]{3}){1,2}$");<br>
+
+                                <font color="green">// If the input format is Hex color value, then process input</font><br>
+                                if (rx.IsMatch(color1) && rx.IsMatch(color2))<br>
+                                {<br>
+                                    &emsp;int a1 = ViewBag.color1 = ColorTranslator.FromHtml(color1).A;<br>
+                                    &emsp;int a2 = ViewBag.color2 = ColorTranslator.FromHtml(color2).A;<br>
+                                    &emsp;mixA = a1 + a2;<br>
+                                    &emsp;...<br>
+                                }<br>
                             </li>
                         </ul>
                     </div>
