@@ -87,12 +87,10 @@ namespace HW4.Controllers
             // Define a regular expression
             Regex rx = new Regex("^#(?:[0-9a-fA-F]{3}){1,2}$");
 
-            Debug.WriteLine(color1 + "@@@@@@@@" + color2);
+            //Debug.WriteLine(color1 + "@@@@@@@@" + color2);
 
-            bool matches1 = rx.IsMatch(color1);
-            bool matches2 = rx.IsMatch(color2);
-
-            Debug.WriteLine(color1 + "@@@@@@@@" + color2);
+            //bool matches1 = rx.IsMatch(color1);
+            //bool matches2 = rx.IsMatch(color2);
 
             // If the input format is Hex color value, then process input
             if (rx.IsMatch(color1) && rx.IsMatch(color2))
