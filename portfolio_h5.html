@@ -14,7 +14,7 @@
 <body>
 
     <div class="jumbotron text-center">
-        <h1>Homework Four</h1>
+        <h1>Homework Five</h1>
         <p>ASP.NET MVC 5 (no dB)</p>
     </div>
 
@@ -84,7 +84,7 @@
             <div class="card">
                 <div class="card-header">
                     <a class="card-link" data-toggle="collapse" href="#collapseSix">
-                        Converter
+                        Error Message
                     </a>
                 </div>
             </div>
@@ -94,10 +94,16 @@
                     <div>
                         <ul class="list-group list-group-flush">
 
-                            <p style="font-size: 20px; font-weight: bold">Designing</p>
+                            <p style="font-size: 20px; font-weight: bold">The model item passed into the dictionary is of type 'HW5.Models.Request', 
+                                but this dictionary requires a model item of type 'System.Collections.Generic.IEnumerable`1[HW5.Models.Request]'.</p>
                             <li class="list-group-item">
-                                Sketch
-                                <img src="homework4/06.JPG" />
+                                Description: An unhandled exception occurred during the execution of the current web request.<br>
+                                Please review the stack trace for more information about the error and where it originated in the code.<br> 
+                            </li>
+
+                            <li class="list-group-item">Exception Details: System.InvalidOperationException: The model item passed<br> 
+                                into the dictionary is of type 'HW5.Models.Request', but this dictionary requires a model item of<br> 
+                                type 'System.Collections.Generic.IEnumerable`1[HW5.Models.Request]'.<br>
                             </li>
 
                             <p style="font-size: 20px; font-weight: bold">Using Request.QueryString["name"]</p>

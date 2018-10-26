@@ -20,11 +20,21 @@ namespace HW5.Models
         public string PhoneNum { get; set; }
 
         [Required]
+        [StringLength(30)]
         public string AptName{ get; set; }
 
         [Required]
-        public int unit { get; set; }
+        public int Unit { get; set; }
 
+        [Required]
+        [StringLength(30)]
+        public string Expl { get; set; }
+
+
+        public override string ToString()
+        {
+            return $"{base.ToString()}: {FirstName} {LastName} Phone={PhoneNum} Apt={AptName} Unit={Unit} Explaination={Expl}";
+        }
 
     }
 }
