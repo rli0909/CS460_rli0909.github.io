@@ -12,6 +12,7 @@
 Thumbs.db
 *.JPG
 *.jpg
+*.PNG
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
