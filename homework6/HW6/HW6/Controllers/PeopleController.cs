@@ -21,6 +21,22 @@ namespace HW6.Controllers
             return View(people.ToList());
         }
 
+        // GET
+        [HttpGet]
+        public ActionResult Search()
+        {
+            string Sname = Request.QueryString["name"];
+
+            IEnumerable<Person> results = db.People.Where(p => p.SearchName.Contains(Sname));
+
+
+
+
+
+           // ViewBag.message = results;
+            return View(results);
+        }
+
         // GET: People/Details/5
         public ActionResult Details(int? id)
         {

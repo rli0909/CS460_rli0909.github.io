@@ -1,0 +1,30 @@
+﻿@model IEnumerable<HW6.Models.Person>
+
+
+@{
+    ViewBag.Title = "Search";
+}
+
+
+<form action="Search" method="get">
+    <div class="row">
+        <div class="col-sm-6">
+            <input name="name" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 text-center">
+            <input type="submit" class="btn btn-primary convertBtn" value="Submit" />
+        </div>
+    </div>
+</form>
+
+
+@Model.Count();
+
+
+@if (ViewBag.message != null)
+{
+    <h3>@ViewBag.message</h3>
+}
