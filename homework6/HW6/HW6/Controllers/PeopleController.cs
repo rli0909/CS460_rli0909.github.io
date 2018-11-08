@@ -21,6 +21,13 @@ namespace HW6.Controllers
             return View(people.ToList());
         }
 
+        // GET: Search
+        public ActionResult Search(string name)
+        {
+            return View();
+        }
+
+
         // GET: People/Details/5
         public ActionResult Details(int? id)
         {
