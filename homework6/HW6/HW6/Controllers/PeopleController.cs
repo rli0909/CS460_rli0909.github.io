@@ -40,8 +40,9 @@ namespace HW6.Controllers
 
 =======
         // GET: Search
-        public ActionResult Search(string name)
+        public ActionResult Search()
         {
+
             return View();
         }
 
