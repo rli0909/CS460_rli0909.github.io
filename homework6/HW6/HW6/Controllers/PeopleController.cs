@@ -21,6 +21,7 @@ namespace HW6.Controllers
             return View(people.ToList());
         }
 
+<<<<<<< HEAD
         // GET
         [HttpGet]
         public ActionResult Search()
@@ -37,6 +38,15 @@ namespace HW6.Controllers
             return View(results);
         }
 
+=======
+        // GET: Search
+        public ActionResult Search(string name)
+        {
+            return View();
+        }
+
+
+>>>>>>> 28cbcf116a135461be2f949229c272c663cd1eb3
         // GET: People/Details/5
         public ActionResult Details(int? id)
         {
