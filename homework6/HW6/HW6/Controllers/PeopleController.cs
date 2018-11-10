@@ -15,26 +15,30 @@ namespace HW6.Controllers
         private EFContext db = new EFContext();
 
         // GET: People
-        public ActionResult Index()
-        {
-            var people = db.People.Include(p => p.Person1);
-            return View(people.ToList());
-        }
+        //public ActionResult Index()
+        //{
+        //  var people = db.People.Include(p => p.Person1);
+
+        // return View(people.ToList());
+        //}
 
         // GET
         [HttpGet]
-        public ActionResult Search()
+        public ActionResult Search(string name)
         {
-            string Sname = Request.QueryString["name"];
-
-            IEnumerable<Person> results = db.People.Where(p => p.SearchName.Contains(Sname));
-
-
-
-
-
-           // ViewBag.message = results;
-            return View(results);
+            name = Request.QueryString["name"];
+            if (name == null)
+            {
+                ViewBag.display = false;
+                return View();
+            }
+            else
+            {
+                ViewBag.display = true;
+                IEnumerable<Person> results = db.People.Where(p => p.SearchName.Contains(name));
+                List<Person> people = results.ToList();
+                return View(people);
+            }
         }
 
         // GET: People/Details/5
@@ -50,99 +54,6 @@ namespace HW6.Controllers
                 return HttpNotFound();
             }
             return View(person);
-        }
-
-        // GET: People/Create
-        public ActionResult Create()
-        {
-            ViewBag.LastEditedBy = new SelectList(db.People, "PersonID", "FullName");
-            return View();
-        }
-
-        // POST: People/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PersonID,FullName,PreferredName,SearchName,IsPermittedToLogon,LogonName,IsExternalLogonProvider,HashedPassword,IsSystemUser,IsEmployee,IsSalesperson,UserPreferences,PhoneNumber,FaxNumber,EmailAddress,Photo,CustomFields,OtherLanguages,LastEditedBy,ValidFrom,ValidTo")] Person person)
-        {
-            if (ModelState.IsValid)
-            {
-                db.People.Add(person);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            ViewBag.LastEditedBy = new SelectList(db.People, "PersonID", "FullName", person.LastEditedBy);
-            return View(person);
-        }
-
-        // GET: People/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Person person = db.People.Find(id);
-            if (person == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.LastEditedBy = new SelectList(db.People, "PersonID", "FullName", person.LastEditedBy);
-            return View(person);
-        }
-
-        // POST: People/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PersonID,FullName,PreferredName,SearchName,IsPermittedToLogon,LogonName,IsExternalLogonProvider,HashedPassword,IsSystemUser,IsEmployee,IsSalesperson,UserPreferences,PhoneNumber,FaxNumber,EmailAddress,Photo,CustomFields,OtherLanguages,LastEditedBy,ValidFrom,ValidTo")] Person person)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(person).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.LastEditedBy = new SelectList(db.People, "PersonID", "FullName", person.LastEditedBy);
-            return View(person);
-        }
-
-        // GET: People/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Person person = db.People.Find(id);
-            if (person == null)
-            {
-                return HttpNotFound();
-            }
-            return View(person);
-        }
-
-        // POST: People/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Person person = db.People.Find(id);
-            db.People.Remove(person);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
         }
     }
 }
