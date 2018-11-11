@@ -48,12 +48,23 @@ namespace HW6.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Person person = db.People.Find(id);
-            if (person == null)
+
+   
+            Person p = db.People.Find(id);
+            ViewBag.pFound = false;
+            if (p == null)
             {
                 return HttpNotFound();
             }
-            return View(person);
+
+            if (p.Customers.Count() > 0)
+            {
+                ViewBag.pFound = true;
+                int ID = p.Customers.FirstOrDefault().CustomerID;
+    
+
+            }
+            return View(p);
         }
     }
 }
