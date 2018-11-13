@@ -3,7 +3,15 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Internet Language Translator</h2>
+<script src="~/Scripts/loadData.js" type="text/javascript"></script>
 
-@using (Html.BeginForm("Index", "Translator", FormMethod.Get, new { @class = ""}))
 
+<h2 id="title">Internet Language Translator</h2>
+
+<form action="" method="get">
+    <div class="form-group">
+        <textarea id="words" name="user_message"></textarea><br>
+        <button class="btn btn-default" type="submit">Submit</button>
+    </div>
+
+</form>

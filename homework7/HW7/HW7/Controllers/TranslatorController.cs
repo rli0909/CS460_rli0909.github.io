@@ -8,7 +8,7 @@ namespace HW7.Controllers
 {
     public class TranslatorController : Controller
     {
-        // GET: Translater
+        // GET: Translator
         public ActionResult Index()
         {
             return View();
