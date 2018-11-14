@@ -15,11 +15,16 @@ namespace HW7.Controllers
         }
 
         // GET: User inputs
-        public ActionResult Translate(string words)
+        public JsonResult Translate(string words)
         {
+            var data = new
+            {
+                message = "Hello from translator",
+                input = (string) words,
+                // How to get stickers according to the input?
+            };
 
-
-            return View( words );
+            return Json(data, JsonRequestBehavior.AllowGet );
         }
     }
 }

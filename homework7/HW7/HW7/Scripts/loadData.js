@@ -15,10 +15,13 @@ function handleResponse(word) {
 }
 */
 
-console.log("In loadData.js");
+
 // Callback function registered on a button. get words from user input and send an async request to server, requesting sticker
-$("#words").click(function () {
- //#words is id name in View
+$("#sub").click(function () {
+    //#words is text input id name in View
+    //Get user input value
+    var word = $("#words").val();
+    console.log(word);
 
     $.ajax({
         type: "GET",
