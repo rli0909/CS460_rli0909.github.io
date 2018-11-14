@@ -1,4 +1,4 @@
-﻿var request = new XMLHttpRequest();
+﻿/*var request = new XMLHttpRequest();
 
 request.onreadystatechange = handleResponse;
 
@@ -13,13 +13,31 @@ function handleResponse(word) {
         alert(response.ip);
     }
 }
+*/
+
+console.log("In loadData.js");
+// Callback function registered on a button. send an async request to server, requesting sticker
+$("#Request").click(function () {
+ //# Request is id name in View
+
+    $.ajax({
+        type: "GET",
+        url: 'https://api.giphy.com/v1/stickers/translate?api_key=XXXYourKeyHereXXX&s=lobster',
+        success: display,
+        error: error
+    });
+
+});
 
 
+function display(data) {
+    console.log(data);
 
-//var url = 'https://api.giphy.com/v1/stickers/translate?api_key=XXXYourKeyHereXXX&s=lobster';
-//$.ajax({
-  //  dataType: "json",
-    //url: 'https://api.giphy.com/v1/stickers/translate?api_key=XXXYourKeyHereXXX&s=lobster'
-    //success: function () { Console.log("success")},
-    //error: function () { Console.log("not success")},
-//});
+    //$("#Message").text(data["message"]);  #Message is id name in View
+
+
+}
+
+function error() {
+    console.log("error");
+}

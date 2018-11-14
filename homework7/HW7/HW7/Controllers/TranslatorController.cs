@@ -8,10 +8,18 @@ namespace HW7.Controllers
 {
     public class TranslatorController : Controller
     {
-        // GET: Translator
+        // GET: Home
         public ActionResult Index()
         {
             return View();
+        }
+
+        // GET: User inputs
+        public ActionResult Translate(string words)
+        {
+
+
+            return View( words );
         }
     }
 }
