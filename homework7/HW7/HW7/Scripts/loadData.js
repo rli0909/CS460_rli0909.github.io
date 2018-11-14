@@ -16,9 +16,9 @@ function handleResponse(word) {
 */
 
 console.log("In loadData.js");
-// Callback function registered on a button. send an async request to server, requesting sticker
-$("#Request").click(function () {
- //# Request is id name in View
+// Callback function registered on a button. get words from user input and send an async request to server, requesting sticker
+$("#words").click(function () {
+ //#words is id name in View
 
     $.ajax({
         type: "GET",
