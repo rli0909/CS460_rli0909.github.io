@@ -28,7 +28,7 @@ namespace HW7.Controllers
 
             // AJAX call to server
             // How to do AJAX call in controllor
-
+          
 
             return Json(data, JsonRequestBehavior.AllowGet );
         }
