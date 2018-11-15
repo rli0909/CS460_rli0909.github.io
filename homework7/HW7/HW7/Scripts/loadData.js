@@ -17,30 +17,33 @@ function handleResponse(word) {
 
 
 // Callback function registered on a button. get words from user input and send an async request to server, requesting sticker
-$("#sub").click(function () {
-    //#words is text input id name in View
-    //Get user input value
-    var word = $("#words").val();
-    console.log(word);
+$("#words").keyup(function (e) {
+    if (e.key == " ") {
+        //Get user input value
+        var words = $("#words").val();
+        // parsing
+        var wArray = words.split(" ");
+        var word = wArray[wArray.length - 2];
 
-    $.ajax({
-        type: "GET",
-        url: 'https://api.giphy.com/v1/stickers/translate?api_key=XXXYourKeyHereXXX&s=lobster',
-        success: display,
-        error: error
-    });
+        console.log('"'+word+'"');
 
+        $.ajax({
+            type: "GET",
+            url: '/Translator/Translate/' + word,
+            success: display,
+            error: error
+        });
+    }
+ 
 });
 
 
 function display(data) {
-    console.log(data);
-
-    //$("#Message").text(data["message"]);  #Message is id name in View
+    $("#Message").append(data["message"] + " "); 
 
 
 }
 
-function error() {
-    console.log("error");
+function error(e) {
+    console.log(e);
 }

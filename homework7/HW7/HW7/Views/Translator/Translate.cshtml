@@ -1,25 +1,20 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Translate";
 }
 
-@section appScript
-{
-    <script type="text/javascript" src="/Scripts/loadData.js"></script>
-    }
+<script src="~/Scripts/loadData.js" type="text/javascript"></script>
+
 
 <h2 id="title">Internet Language Translator</h2>
 
 <form action="" method="get">
     <div class="form-group">
         <textarea id="words" name="user_message"></textarea><br>
-        <button id="sub" class="btn btn-default" type="submit">Submit</button>
+        <button class="btn btn-default" type="submit">Submit</button>
     </div>
 
 </form>
-
-
-
 
 <div id="Message"></div>
 
