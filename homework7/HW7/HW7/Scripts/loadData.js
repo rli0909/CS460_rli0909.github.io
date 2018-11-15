@@ -20,6 +20,8 @@ var api = "http://api.giphy.com/v1/gifs/translate?";
 var apiKey = "&api_key=gMrqiddCIe001wwIeLKG0llVIXfOKmh9";
 var picurl = "";
 
+//var BoringWords = ["i", "you"];
+
 // Callback function registered on a button. get words from user input and send an async request to server, requesting sticker
 $("#words").keyup(function (e) {
     if (e.key == " ") {
@@ -64,9 +66,11 @@ function getSticker(data) {
         $("#Type").append(e["data"]["type"] + " ");
         picurl = e["data"]["images"]["fixed_width"]["url"]
         $("#PicURL").append(e["data"]["images"]["fixed_width"]["url"] + "  ");
-        $("#ShowPic").attr("src", picurl);
+        //$("#ShowPic").attr("src", picurl);
+        $("#ShowPic").append("<img src=\"" + picurl + "\"" + ">");
+        console.log("<img src=\"" + picurl + "\"" + ">");
     }
-
+    
 }
 
 function error(e) {
