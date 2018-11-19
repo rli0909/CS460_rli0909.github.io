@@ -23,14 +23,14 @@ namespace HW7.Controllers
         {
             return View();
         }
-        // GET: User inputs
+        // GET: sticker
         public async Task<JsonResult> Translate(string id)
         {
             // img url that get from server
             //var imgpath = "";
             // Call web api
             string api = "http://api.giphy.com/v1/gifs/translate?";
-            // Make it secret
+            // Needs to Make it secret
             string apiKey = "&api_key=gMrqiddCIe001wwIeLKG0llVIXfOKmh9";
             // Concatenate url
             string url = api + apiKey + "&s=" + id;
@@ -54,6 +54,14 @@ namespace HW7.Controllers
                 }
             }
         }
+
+        /* GET: A list of Nouns
+        public async Task<JsonResult> Nouns()
+        {
+            string url = "http://od-api.oxforddictionaries.com:443/api/v1/wordlist/en/registers=Rare;domains=Art";
+           
+        }
+        */
     }
 
 }
