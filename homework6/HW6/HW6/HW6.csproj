@@ -217,6 +217,7 @@
     <Compile Include="Models\TransactionTypes_Archive.cs" />
     <Compile Include="Models\VehicleTemperature.cs" />
     <Compile Include="Models\VehicleTemperatures1.cs" />
+    <Compile Include="Models\ViewModel\VM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
   </ItemGroup>
