@@ -1,4 +1,4 @@
-﻿@model HW6.Models.Person
+﻿@model HW6.Models.ViewModel.VM
 
 @{
     ViewBag.Title = "Details";
@@ -13,53 +13,69 @@
 
 
         <dt>
-            @Html.DisplayNameFor(model => model.FullName)
+            @Html.DisplayNameFor(model => model.Person.FullName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.FullName)
+            @Html.DisplayFor(model => model.Person.FullName)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PreferredName)
+            @Html.DisplayNameFor(model => model.Person.PreferredName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.PreferredName)
+            @Html.DisplayFor(model => model.Person.PreferredName)
         </dd>
        
         <dt>
-            @Html.DisplayNameFor(model => model.PhoneNumber)
+            @Html.DisplayNameFor(model => model.Person.PhoneNumber)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.PhoneNumber)
+            @Html.DisplayFor(model => model.Person.PhoneNumber)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.FaxNumber)
+            @Html.DisplayNameFor(model => model.Person.FaxNumber)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.FaxNumber)
+            @Html.DisplayFor(model => model.Person.FaxNumber)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.EmailAddress)
+            @Html.DisplayNameFor(model => model.Person.EmailAddress)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.EmailAddress)
+            @Html.DisplayFor(model => model.Person.EmailAddress)
         </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Photo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Photo)
-        </dd>
-
 <p>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Search")
 </p>
+</div>
+
+<div>
+    <dt>
+        @Html.DisplayNameFor(model => model.Person.Photo)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Person.Photo)
+    </dd>
+</div>
+
+@if (ViewBag.pFound)
+{
+<div class="row">
+    <div class="col">
+
+    </div>
+
+    <div class="col">
+
+    </div>
+
+</div>
+}

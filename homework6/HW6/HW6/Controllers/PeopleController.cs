@@ -36,18 +36,21 @@ namespace HW6.Controllers
             else
             {
                 ViewBag.display = true;
-                IEnumerable<Person> results = db.People.Where(p => p.SearchName.Contains(name));
-                List<Person> people = results.ToList();
-                return View(people);
+                //IEnumerable<Person> results = db.People.Where(p => p.SearchName.Contains(name));
+                //List<Person> people = results.ToList();
+                //return View(people);
+                return View(db.People.Where(p => p.FullName.Contains(name)).ToList());
             }
         }
 
         // GET: People/Details/5
         public ActionResult Details(int? id)
         {
-            VM vm = new VM();
-            // set value of person in ViewModel
-            vm.Person = db.People.Find(id);
+            VM vm = new VM
+            {
+                // set value of person in ViewModel
+                Person = db.People.Find(id)
+            };
 
             Person p = db.People.Find(id);
             ViewBag.pFound = false;
