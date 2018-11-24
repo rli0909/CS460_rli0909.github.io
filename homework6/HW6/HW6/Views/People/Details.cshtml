@@ -75,15 +75,69 @@
                 <dt>Company:</dt>
                 <dd>@Html.DisplayFor(model => model.Customer.CustomerName)</dd>
 
-                <dt></dt>
-                <dd></dd>
+                <dt>Phone:</dt>
+                <dd>@Html.DisplayFor(model => model.Customer.PhoneNumber)</dd>
+
+                <dt>Fax:</dt>
+                <dd>@Html.DisplayFor(model => model.Customer.FaxNumber)</dd>
+
+                <dt>Website:</dt>
+                <dd>@Html.DisplayFor(model => model.Customer.WebsiteURL)</dd>
+
+                <dt>Member Since:</dt>
+                <dd>@Html.DisplayFor(model => model.Customer.AccountOpenedDate)</dd>
             </dl>
         </div>
 
         <div class="col">
+            <div id="map" style="width:400px; height:300px;">
+                <script>
 
+                    
+                </script>
+            </div>
         </div>
 
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <h3>Purchase History Summary</h3>
+            <dl class="dl-horizontal">
+                <dd>Orders: @Html.DisplayFor(model => model.Customer.Orders.Count)</dd>
+                <dd>Gross Sales: @String.Format("{0:C}", ViewBag.GrossSales)</dd>
+                <dd>Gross Profit: @String.Format("{0:C}", ViewBag.GrossProfit)</dd>
+            </dl>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <h3>Items Purchased</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">StockItemID</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Line Profit</th>
+                        <th scope="col">Sales Person</th>
+                    </tr>
+                </thead>
+
+                @foreach (var items in Model.InvoiceLine)
+                {
+                    <tbody>
+                        <tr>
+                            <td>@Html.DisplayFor(i => items.StockItemID)</td>
+                            <td>@Html.DisplayFor(i => items.Description)</td>
+                            <td>@Html.DisplayFor(i => items.LineProfit)</td>
+                            <td>@Html.DisplayFor(i => items.Invoice.Person.FullName)</td>
+                        </tr>
+                    </tbody>
+                }
+            </table>
+        </div>
     </div>
 }
 

@@ -49,8 +49,23 @@ namespace HW6.Controllers
             ViewModel vm = new ViewModel();
 
             vm.Person = db.People.Find(id);
-            
+
             ViewBag.found = false;
+
+            Person p = db.People.Find(id);
+
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            if (p == null)
+            {
+                // ViewBag.display = false;
+                return HttpNotFound();
+            }
+
             if (vm.Person.Customers2.Count() > 0)
             {
                 ViewBag.found = true;
@@ -73,21 +88,6 @@ namespace HW6.Controllers
                                                    .OrderByDescending(lp => lp.LineProfit)
                                                    .Take(10).ToList();
             }
-
-            Person p = db.People.Find(id);
-
-
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-
-            if (p == null)
-            {
-                // ViewBag.display = false;
-                return HttpNotFound();
-            }
-
 
             return View(vm);
         }
