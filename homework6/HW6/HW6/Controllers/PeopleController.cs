@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.Entity;
+using System.Diagnostics;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using HW6.Models;
 using HW6.Models.ViewModel;
@@ -13,6 +12,7 @@ namespace HW6.Controllers
 {
     public class PeopleController : Controller
     {
+        // Context file connect to db
         private EFContext db = new EFContext();
 
         // GET: People
@@ -46,29 +46,16 @@ namespace HW6.Controllers
         // GET: People/Details/5
         public ActionResult Details(int? id)
         {
-            VM vm = new VM
-            {
-                // set value of person in ViewModel
-                Person = db.People.Find(id)
-            };
+            ViewModel vm = new ViewModel();
 
-            Person p = db.People.Find(id);
-            ViewBag.pFound = false;
-
-            if (id == null)
+            vm.Person = db.People.Find(id);
+            
+            ViewBag.found = false;
+            if (vm.Person.Customers2.Count() > 0)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-       
-            if (p == null)
-            {
-                return HttpNotFound();
-            }
-
-            if (vm.Person.Customers.Count() > 0)
-            {
-                ViewBag.pFound = true;
-                int ID = vm.Person.Customers.FirstOrDefault().CustomerID;
+                ViewBag.found = true;
+                //Debug.WriteLine("pFound is true");
+                int ID = vm.Person.Customers2.FirstOrDefault().CustomerID;
 
                 // find person from Customers model with ID and set to Customer in ViewModel
                 vm.Customer = db.Customers.Find(ID);
@@ -86,6 +73,22 @@ namespace HW6.Controllers
                                                    .OrderByDescending(lp => lp.LineProfit)
                                                    .Take(10).ToList();
             }
+
+            Person p = db.People.Find(id);
+
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            if (p == null)
+            {
+                // ViewBag.display = false;
+                return HttpNotFound();
+            }
+
+
             return View(vm);
         }
     }

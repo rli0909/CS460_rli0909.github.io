@@ -1,4 +1,4 @@
-﻿@model HW6.Models.ViewModel.VM
+﻿@model HW6.Models.ViewModel.ViewModel
 
 @{
     ViewBag.Title = "Details";
@@ -6,76 +6,90 @@
 
 <h2>Details</h2>
 
-<div>
-    <h4>Person</h4>
-    <hr />
-    <dl class="dl-horizontal">
+<div class="row">
+    <div class="col">
+        <h4>Person</h4>
+        <hr />
+        <dl class="dl-horizontal">
 
 
+            <dt>
+                @Html.DisplayNameFor(model => model.Person.FullName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Person.FullName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Person.PreferredName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Person.PreferredName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Person.PhoneNumber)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Person.PhoneNumber)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Person.FaxNumber)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Person.FaxNumber)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Person.EmailAddress)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Person.EmailAddress)
+            </dd>
+    </div>
+
+
+    <div class="col">
         <dt>
-            @Html.DisplayNameFor(model => model.Person.FullName)
+            @Html.DisplayNameFor(model => model.Person.Photo)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Person.FullName)
+            @Html.DisplayFor(model => model.Person.Photo)
         </dd>
+    </div>
+</div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Person.PreferredName)
-        </dt>
+@if (ViewBag.found)
+{
+    <div class="row">
+        <div class="col">
+            <h3>Company Profile</h3>
+            <dl class="dl-horizontal">
+                <dt>Company:</dt>
+                <dd>@Html.DisplayFor(model => model.Customer.CustomerName)</dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Person.PreferredName)
-        </dd>
-       
-        <dt>
-            @Html.DisplayNameFor(model => model.Person.PhoneNumber)
-        </dt>
+                <dt></dt>
+                <dd></dd>
+            </dl>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Person.PhoneNumber)
-        </dd>
+        <div class="col">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Person.FaxNumber)
-        </dt>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Person.FaxNumber)
-        </dd>
+    </div>
+}
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Person.EmailAddress)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Person.EmailAddress)
-        </dd>
+
+
 <p>
     @Html.ActionLink("Back to List", "Search")
 </p>
-</div>
-
-<div>
-    <dt>
-        @Html.DisplayNameFor(model => model.Person.Photo)
-    </dt>
-
-    <dd>
-        @Html.DisplayFor(model => model.Person.Photo)
-    </dd>
-</div>
-
-@if (ViewBag.pFound)
-{
-<div class="row">
-    <div class="col">
-
-    </div>
-
-    <div class="col">
-
-    </div>
-
-</div>
-}

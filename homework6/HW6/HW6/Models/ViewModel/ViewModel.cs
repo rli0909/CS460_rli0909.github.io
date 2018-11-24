@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
 namespace HW6.Models.ViewModel
 {
-    public class VM
+    public class ViewModel
     {
         public Person Person { get; set; }
         public Customer Customer { get; set; }
