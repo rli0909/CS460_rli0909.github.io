@@ -4,6 +4,20 @@
     ViewBag.Title = "Details";
 }
 
+<style>
+    /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+    #map {
+        height: 100%;
+    }
+    /* Optional: Makes the sample page fill the window. */
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+
 <h2>Details</h2>
 
 <div class="row">
@@ -90,12 +104,26 @@
         </div>
 
         <div class="col">
-            <div id="map" style="width:400px; height:300px;">
-                <script>
+            <div id="map"></div>
+            <script>
+                var map;
+                // Initialize map
+                function initMap() {
+                    // location
+                    var long = @Model.Customer.DeliveryLocation.Longitude;
+                    var lati = @Model.Customer.DeliveryLocation.Latitude;
+               
+                    map = new google.maps.Map(document.getElementById('map'), {
+                        center: { lat: lati, lng: long},
+                        zoom: 8
+                    });
 
-                    
-                </script>
-            </div>
+                    var marker = new google.maps.Marker({ position: { lat: lati, lng: long }, map: map });
+                }
+                
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAE9-NYXQGs3LHEbPLTd51wPXG7Z5pP3Z0&callback=initMap"
+                    async defer></script>
         </div>
 
     </div>
