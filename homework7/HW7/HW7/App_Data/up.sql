@@ -1,0 +1,11 @@
+﻿-- User Input table
+CREATE TABLE [dbo].[UserInput]
+(
+	[ID] INT IDENTITY(1,1) NOT NULL,
+	[Word] NVARCHAR(64) NULL,
+	[IP] NVARCHAR(128) NOT NULL,
+	[Date] DATETIME NOT NULL
+	CONSTRAINT [PK_dbo.UserInput] PRIMARY KEY CLUSTERED([ID])
+);
+
+GO

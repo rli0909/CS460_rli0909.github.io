@@ -1,4 +1,5 @@
-﻿using HW7.Models;
+﻿using HW7.DAL;
+using HW7.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,11 @@ using System.Web.Mvc;
 namespace HW7.Controllers
 {
     public class TranslatorController : Controller
+
     {
+        private URContext db = new URContext();
+
+   
         // client object
        // static HttpClient client = new HttpClient();
        // var api = "http://api.giphy.com/v1/gifs/translate?";
@@ -31,7 +36,8 @@ namespace HW7.Controllers
             // Call web api
             string api = "http://api.giphy.com/v1/gifs/translate?";
             // Needs to Make it secret
-            string apiKey = "&api_key=gMrqiddCIe001wwIeLKG0llVIXfOKmh9";
+            //string apiKey = "&api_key=gMrqiddCIe001wwIeLKG0llVIXfOKmh9";
+            string apiKey = "&api_key=" + System.Web.Configuration.WebConfigurationManager.AppSettings["giphyKey"];
             // Concatenate url
             string url = api + apiKey + "&s=" + id;
 
@@ -43,15 +49,27 @@ namespace HW7.Controllers
                 HttpResponseMessage response = await hc.GetAsync(url);
                 if (response.IsSuccessStatusCode)
                 {
+                 
                     // from acsync to sycn  .GetAwaiter().GetResult()
                     var result = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
                     // deserialization from json string to c# object 'convert to class http://json2csharp.com/#'
                     var jsonResult = JsonConvert.DeserializeObject<TranslateResult>(result);
+
+                    /*
+                    //Save to Database
+                    GiphyRequest ur = new GiphyRequest();
+                    ur.Word = id;
+                    ur.IP = Request.UserHostAddress;
+                    db.GiphyRequests.Add(ur);
+                    db.SaveChanges();
+                    */
+
                     return Json(jsonResult, JsonRequestBehavior.AllowGet);
                 }
                 else {
                     return Json("Not Found");
                 }
+
             }
         }
 
