@@ -32,6 +32,9 @@ namespace HW8.Controllers
             //Same as 
             //db.Bids.Where(b => b.ItemID == id);
 
+            int ItemID = db.Items.Find(id).ItemID;
+            vm.Item = db.Items.Find(ItemID);
+
             ViewBag.display = false;
 
             if (id == null)
@@ -47,9 +50,10 @@ namespace HW8.Controllers
             
             if (vm.Bids.Count() > 0)
             {
+                Debug.WriteLine("#####################################" + vm.Bids.Count());
+
                 ViewBag.display = true;
-                int ItemID = db.Items.Find(id).ItemID;
-                vm.Item = db.Items.Find(ItemID);
+                
                 //int BidID = db.Bids.Find(id).BidID;
                 //vm.Bids.OrderByDescending(b => b.Price);
             }
