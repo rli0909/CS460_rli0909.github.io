@@ -7,6 +7,9 @@ namespace HW8.Models.ViewModel
 {
     public class VM
     {
-        public IEnumerable<Bid> Bid { get; set; }
+        public Bid Bid { get; set; }
+        public Item Item { get; set; }
+        public IEnumerable<Bid> Bids { get; set; }
+        public IEnumerable<Item> Items { get; set; }
     }
 }

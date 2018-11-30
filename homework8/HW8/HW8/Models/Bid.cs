@@ -8,8 +8,9 @@ namespace HW8.Models
 
     public partial class Bid
     {
+        [Key]
         public int BidID { get; set; }
-
+        
         public int ItemID { get; set; }
 
         [Required]

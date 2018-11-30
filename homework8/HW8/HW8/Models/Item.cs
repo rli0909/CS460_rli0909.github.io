@@ -13,7 +13,7 @@ namespace HW8.Models
         {
             Bids = new HashSet<Bid>();
         }
-
+        [Key]
         public int ItemID { get; set; }
 
         [Required]

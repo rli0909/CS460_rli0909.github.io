@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using HW8.Models;
+using HW8.Models.ViewModel;
 
 namespace HW8.Controllers
 {
@@ -24,6 +26,14 @@ namespace HW8.Controllers
         // GET: Items/Details/5
         public ActionResult Details(int? id)
         {
+            VM vm = new VM();
+            vm.Bids = db.Items.Find(id).Bids;
+            //vm.Bids.OrderByDescending(b => b.Price);
+            //Same as 
+            //db.Bids.Where(b => b.ItemID == id);
+
+            ViewBag.display = false;
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -33,7 +43,18 @@ namespace HW8.Controllers
             {
                 return HttpNotFound();
             }
-            return View(item);
+
+            
+            if (vm.Bids.Count() > 0)
+            {
+                ViewBag.display = true;
+                int ItemID = db.Items.Find(id).ItemID;
+                vm.Item = db.Items.Find(ItemID);
+                //int BidID = db.Bids.Find(id).BidID;
+                //vm.Bids.OrderByDescending(b => b.Price);
+            }
+           
+            return View(vm);
         }
 
         // GET: Items/Create
