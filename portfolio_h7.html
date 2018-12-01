@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="jumbotron text-center">
+        <h1>Homework Seven</h1>
+        <p>Internet Language Translator</p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <a href="https://github.com/rli0909/CS460_rli12.github.io/tree/master/homework7/HW7/HW7" class="list-group-item">View
+                    Code on GitHub</a>
+            </div>
+
+            <div class="col-sm-8">
+                <h3>Notes</h3>
+
+                <div id="accordion">
+
+                    <div class="card">
+                        <div class="card-header">
+                            <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                                AJAX
+                            </a>
+                        </div>
+                        <div id="collapseOne" class="collapse" data-parent="#accordion">
+                            <div class="card-body">
+                                <div>
+                                    <a href="#" data-toggle="popover" data-placement="top" data-content="Read data from a web server - after the page has loaded; 
+                                    Update a web page without reloading the page; 
+                                    Send data to a web server - in the background">AJAX</a>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">
+                                            <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX/Getting_Started">Getting Started AJAX</a><br>
+                                            <a href="https://api.jquery.com/jQuery.getJSON/">jQuery.getJSON()</a><br>
+                                            <a href="http://api.jquery.com/jquery.ajax/">jQuery.ajax()</a><br>
+                                            <a href="https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.debug.writeline?view=netframework-4.7.2">Debug.WriteLine
+                                                Method</a>
+
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <a href="https://www.w3schools.com/jquery/jquery_ref_ajax.asp">jQuery AJAX Methods</a>
+                                        </li>
+                                    </ul>
+
+
+                                    <a href="#" data-toggle="popover" data-placement="top" data-content="The Web MVC project templates integrate seamlessly with the One ASP.NET experience. 
+                                    You can customize your MVC project and configure authentication using the One ASP.NET project creation wizard.">ASP.NET MVC
+                                    </a>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">
+                                            <a href="https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.7.2">Regex Class (Namespace: System.Text.RegularExpressions)</a>
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3>Blog</h3>
+
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header">
+                    <a class="card-link" data-toggle="collapse" href="#collapseSix">
+                        Setup
+                    </a>
+                </div>
+            </div>
+
+            <div id="collapseSix" class="collapse" data-parent="#accordion">
+                <div class="card-body">
+                    <div>
+                        <ul class="list-group list-group-flush">
+
+                            <p style="font-size: 20px; font-weight: bold">Create a new MVC application.</p>
+                            <li class="list-group-item">
+                                .......<br> 
+                            </li>
+
+                            <li class="list-group-item">Exception Details: System.InvalidOperationException: The model item passed<br> 
+                                into the dictionary is of type 'HW5.Models.Request', but this dictionary requires a model item of<br> 
+                                type 'System.Collections.Generic.IEnumerable`1[HW5.Models.Request]'.<br>
+                            </li>
+
+                            <p style="font-size: 20px; font-weight: bold">Using Request.QueryString["name"]</p>
+                            <li class="list-group-item">
+                                string mile = Request.QueryString["miles"];<br>
+                                string unit = Request.QueryString["unit"];<br>
+
+                                float miles = 0.0f;<br>
+                                float units = 0.0f;<br>
+                            </li>
+
+                            <p style="font-size: 20px; font-weight: bold">Validate Value of Request.QueryString. If the
+                                value is not null, convert value from string type to float type</p>
+                            <li class="list-group-item">
+                                if (mile != null && unit != null)<br>
+                                {<br>
+                                    &emsp;miles = float.Parse(mile);<br>
+                                    &emsp;units = float.Parse(unit);<br>
+                                }<br>
+                            </li>
+
+                            <p style="font-size: 20px; font-weight: bold">Conditions</p>
+                            <li class="list-group-item">
+                                if (unit == "1609344")<br>
+                                {<br>
+                                    &emsp;ViewBag.Message = miles + " miles " + " is equals to " + result + " millimeters";<br>
+                                }<br>
+                                else if (unit == "160934.4")<br>
+                                {<br>
+                                    &emsp;ViewBag.Message = miles + " miles " + " is equals to " + result + " centimeters";<br>
+                                }<br>
+                                else if (unit == "1609.344")<br>
+                                {<br>
+                                    &emsp;ViewBag.Message = miles + " miles " + " is equals to " + result + " meters";<br>
+                                }<br>
+                                else if (unit == "1.609344")<br>
+                                {<br>
+                                    &emsp;ViewBag.Message = miles + " miles " + " is equals to " + result + " kilometers";<br>
+                                }<br>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="card-header">
+                    <a class="card-link" data-toggle="collapse" href="#collapseFive">
+                        Color Chooser
+                    </a>
+                </div>
+            </div>
+
+            <div id="collapseFive" class="collapse" data-parent="#accordion">
+                <div class="card-body">
+                    <div>
+                        <ul class="list-group list-group-flush">
+
+                            <p style="font-size: 20px; font-weight: bold">Designing</p>
+                            <li class="list-group-item">
+                                Sketch
+                                <img src="homework4/07.JPG" />
+                            </li>
+
+                            <p style="font-size: 20px; font-weight: bold">Get color from view and apply algorithm (Code
+                                is example of A in ARGB value.)</p>
+                            <li class="list-group-item">
+                                int a1 = ViewBag.color1 = ColorTranslator.FromHtml(color1).A;<br>
+                                int a2 = ViewBag.color2 = ColorTranslator.FromHtml(color2).A;<br>
+                                int mixA = a1 + a2;<br>
+                                if (mixA >= 255)<br>
+                                {<br>
+                                    &emsp;mixA = 255;<br>
+                                }<br>
+                            </li>
+
+                            <p style="font-size: 20px; font-weight: bold">Convert result color into ARGB structure, and
+                                then convert ARGB value to Hex value</p>
+                            <li class="list-group-item">
+                                Color result = Color.FromArgb(mixA, mixRed, mixGreen, mixBlue);<br>
+                                string hexValue = ColorTranslator.ToHtml(result);<br>
+                                ViewBag.mix = hexValue;<br>
+                            </li>
+
+                            <p style="font-size: 20px; font-weight: bold">Display original color 1 + color 2 = new
+                                mixed color</p>
+                            <li class="list-group-item">
+                                ViewBag.color1 = color1; <br>
+                                ViewBag.color2 = color2; <br>
+
+                                &lt;i class="fas fa-paint-brush" style="color:@ViewBag.color1;font-size:60px">&lt;/i><br>
+
+                                &lt;font size="28"> + &lt;/font><br>
+                                &lt;i class="fas fa-palette" style="color:@ViewBag.color2;font-size:60px">&lt;/i><br>
+                                &lt;font size="28"> = &lt;/font><br>
+                                &lt;i class="fab fa-mix" style="color:@ViewBag.mix;font-size:60px">&lt;/i><br>
+                            </li>
+
+                            <p style="font-size: 20px; font-weight: bold">Using regex to validate input color value</p>
+                            <li class="list-group-item">
+                                <font color="DeepSkyBlue">using</font> System.Text.RegularExpressions;<br>
+                                <font color="green">// Define a regular expression</font><br>
+                                Regex rx = new Regex("^#(?:[0-9a-fA-F]{3}){1,2}$");<br>
+
+                                <font color="green">// If the input format is Hex color value, then process input</font><br>
+                                if (rx.IsMatch(color1) && rx.IsMatch(color2))<br>
+                                {<br>
+                                    &emsp;int a1 = ViewBag.color1 = ColorTranslator.FromHtml(color1).A;<br>
+                                    &emsp;int a2 = ViewBag.color2 = ColorTranslator.FromHtml(color2).A;<br>
+                                    &emsp;mixA = a1 + a2;<br>
+                                    &emsp;...<br>
+                                }<br>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="popover"]').popover();
+        });
+    </script>
+</body>
+
+</html>
