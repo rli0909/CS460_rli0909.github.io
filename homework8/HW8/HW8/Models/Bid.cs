@@ -23,7 +23,16 @@ namespace HW8.Models
         [Column(TypeName = "timestamp")]
         [MaxLength(8)]
         [Timestamp]
-        public byte[] Timestamp { get; set; }
+        //public byte[] Timestamp { get; set; }
+
+        
+        private DateTime Date = DateTime.Now;
+        public DateTime Timestamp
+        {
+            get { return Date; }
+            set { Date = value; }
+        }
+        
 
         public virtual Item Item { get; set; }
 

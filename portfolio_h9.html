@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="jumbotron text-center">
+        <h1>Homework Eight</h1>
+        <p>MVC app 5, diy multi-table/relational dB</p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <a href="https://github.com/rli0909/CS460_rli12.github.io/tree/master/homework8/HW8" class="list-group-item">View
+                    Code on GitHub</a>
+            </div>
+        </div>
+
+        <h3>Azure</h3>
+
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header">
+                    <a class="card-link" data-toggle="collapse" href="#collapseSix">
+                       APP Deployment
+                    </a>
+                </div>
+            </div>
+
+            <div id="collapseSix" class="collapse" data-parent="#accordion">
+                <div class="card-body">
+                    <div>
+                        <ul class="list-group list-group-flush">
+
+                            <p style="font-size: 20px; font-weight: bold">To Deploy the app</p>
+                            <li class="list-group-item">
+                                Visual Studio ==> Build ==> Publish HW8 (01) [NOT DO THIS]<br>
+                                Check whether logged in VS<br>
+                                Create a resources group (02, 03) ==> select ==> create<br>
+
+
+                                Create SQL Database & server remember user name and ps (04, 05)<br>
+                                Add firewall (06, 07, )<br>
+                                Delete previous one and change to basic (08)<br>
+                                Firewall rule to our development machine access so we can manage the database (09) 
+                                <li>resources group</li>
+                                <li>SQL Server</li>
+                                <li>Show firewall settings (10, 11)</li>
+                                <li>MSSM connect with username and ps</li>
+                                <li>in VS ==> SQL Server OE</li>
+                                <li>add sql server</li>
+                                Connect to db using SSMS or Sql Server Object Explorer and run UP file
+                                
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="popover"]').popover();
+        });
+    </script>
+</body>
+
+</html>

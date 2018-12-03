@@ -14,7 +14,7 @@ namespace HW8.Controllers
         public ActionResult Index()
         {
             VM vm = new VM();
-            vm.Bids = db.Bids.Take(10).OrderByDescending(v => v.Timestamp);
+            vm.Bids = db.Bids.Take(10).OrderByDescending(v => v.Price);
             return View(vm);
         }
 
