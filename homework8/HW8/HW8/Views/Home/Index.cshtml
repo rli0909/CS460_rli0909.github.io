@@ -1,4 +1,6 @@
-﻿@{
+﻿@model HW8.Models.ViewModel.VM
+
+@{
     ViewBag.Title = "Reginald's Ancient Antiquities Auction House";
 }
 
@@ -8,20 +10,62 @@
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+
     </div>
     <div class="col-md-4">
         <p><a class="btn btn-default" href="/Bids/Create">Bid on an Item! &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Bid.BidID);
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Bid.Timestamp);
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Item.ItemName);
+                </th>
+                <th>
+                    @Html.DisplayName("BuyerName");
+                </th>
+                <th>
+                    @Html.DisplayName("BidPrice");
+                </th>
+            </tr>
+
+            @foreach (var b in Model.Bids)
+            {
+                <tr>
+                    <td>
+                        @b.BidID;
+                    </td>
+                    <td>
+                        @b.Timestamp;
+                    </td>
+                    <td>
+                        @b.Item.ItemName;
+                    </td>
+                    <td>
+                        @b.BuyerName;
+                    </td>
+                    <td>
+                        @b.Price;
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="row">
+
+    </div>
+    <div class="row">
+
     </div>
 </div>

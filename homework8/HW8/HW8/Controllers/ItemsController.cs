@@ -26,6 +26,9 @@ namespace HW8.Controllers
         // GET: Items/Details/5
         public ActionResult Details(int? id)
         {
+           
+
+
             VM vm = new VM();
             vm.Bids = db.Items.Find(id).Bids;
             //vm.Bids.OrderByDescending(b => b.Price);

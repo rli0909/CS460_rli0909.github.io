@@ -14,14 +14,14 @@
 <body>
 
     <div class="jumbotron text-center">
-        <h1>Homework Five</h1>
-        <p>ASP.NET MVC 5 (with dB)</p>
+        <h1>Homework Eight</h1>
+        <p>MVC app 5, diy multi-table/relational dB</p>
     </div>
 
     <div class="container">
         <div class="row">
             <div class="col-sm-4">
-                <a href="https://github.com/rli0909/CS460_rli12.github.io/tree/master/homework5" class="list-group-item">View
+                <a href="https://github.com/rli0909/CS460_rli12.github.io/tree/master/homework8/HW8" class="list-group-item">View
                     Code on GitHub</a>
             </div>
 
@@ -33,15 +33,15 @@
                     <div class="card">
                         <div class="card-header">
                             <a class="card-link" data-toggle="collapse" href="#collapseOne">
-                                ASP.NET MVC
+                                Database
                             </a>
                         </div>
                         <div id="collapseOne" class="collapse" data-parent="#accordion">
                             <div class="card-body">
                                 <div>
-                                    <a href="#" data-toggle="popover" data-placement="top" data-content="The Web MVC project templates integrate seamlessly with the One ASP.NET experience. 
-                                    You can customize your MVC project and configure authentication using the One ASP.NET project creation wizard.">ASP.NET
-                                        MVC 5 (.NET Framework 4.7.2)
+                                    <a href="#" data-toggle="popover" data-placement="top" data-content="Create tables and insert data">Upscript
+                                    </a>
+                                    <a href="#" data-toggle="popover" data-placement="top" data-content="drop table, bottom-up">Downscript
                                     </a>
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item">
@@ -94,24 +94,31 @@
                     <div>
                         <ul class="list-group list-group-flush">
 
-                            <p style="font-size: 20px; font-weight: bold">An error occurred while sending the request.
-                                The remote name could not be resolved: 'api.nuget.org'</p>
+                            <p style="font-size: 20px; font-weight: bold">The model item passed into the dictionary is of type 'System.Collections.Generic.List`1[HW8.Models.Bid]', but this dictionary requires a model item of type 'HW8.Models.ViewModel.VM'.</p>
                             <li class="list-group-item">
-                                .......<br> 
+                                Instead of using "var bids = db.Bids.Take(10)"<br>
+                                Use:<br>
+                                VM vm = new VM();<br>
+                                vm.Bids = db.Bids.Take(10).OrderByDescending(v => v.Timestamp);<br>
+                                return View(vm); <br>
                             </li>
 
-                            <li class="list-group-item">Exception Details: System.InvalidOperationException: The model item passed<br> 
-                                into the dictionary is of type 'HW5.Models.Request', but this dictionary requires a model item of<br> 
-                                type 'System.Collections.Generic.IEnumerable`1[HW5.Models.Request]'.<br>
+                            <p style="font-size: 20px; font-weight: bold">System.ArgumentException: 'At least one object must implement IComparable.'<br>Timestamp return "System.Byte[]; "</p>
+                            <li class="list-group-item">
+                                Need to convert byte value, but couldn't find how...<br>
                             </li>
 
-                            <p style="font-size: 20px; font-weight: bold">Using Request.QueryString["name"]</p>
+                            <p style="font-size: 20px; font-weight: bold">To Deploy the app</p>
                             <li class="list-group-item">
-                                string mile = Request.QueryString["miles"];<br>
-                                string unit = Request.QueryString["unit"];<br>
+                                Visual Studio ==> Build ==> Publish HW8 (01) [NOT DO THIS]<br>
+                                Check whether logged in VS<br>
+                                Create a resources group (02, 03) ==> select ==> create<br>
 
-                                float miles = 0.0f;<br>
-                                float units = 0.0f;<br>
+
+                                Create SQL Database & server remember user name and ps (04, 05)<br>
+                                Add firewall (06, 07, )<br>
+                                Delete previous one and change to basic (08)<br>
+                                Firewall (09)
                             </li>
 
                             <p style="font-size: 20px; font-weight: bold">Validate Value of Request.QueryString. If the
