@@ -58,15 +58,15 @@ function getNoun(e) {
 
 function display(e) {
     console.log(e);
-    $("#Message").append(word + " ");
+    //$("#Message").append(word + " ");
     // get images url
 
     //var WordPOS = require('wordpos');
     //wordpos = new WordPOS();
 
     // how to get a list of nouns...
-    var ignoreWords = ["I", "am", "a"];
-    if (ignoreWords.includes(word)) {
+    var showWords = ["dog", "cat", "walk", "lobster", "apple"];
+    if (showWords.includes(word)) {
         picurl = e["data"]["images"]["fixed_height_small"]["url"];
         // append each picture
         $("#ShowPic").append("<img src=\"" + picurl + "\"" + ">" + "  ");

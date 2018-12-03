@@ -52,12 +52,14 @@ namespace HW7.Controllers
                 if (response.IsSuccessStatusCode)
                 {
 
+                    /*
                     //Save to Database
                     UserInput ui = new UserInput();
                     ui.Word = id;
                     ui.IP = Request.UserHostAddress;
                     db.UserInputs.Add(ui);
                     db.SaveChanges();
+                    */
 
                     // from acsync to sycn  .GetAwaiter().GetResult()
                     var result = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
